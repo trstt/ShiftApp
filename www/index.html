@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" type="text/css" href="lib/appframework/icons.css" />
     <link rel="stylesheet" type="text/css" href="lib/appframework/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="lib/shiftStyles.css" />
 
     <script type="text/javascript" charset="utf-8" src="lib/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="lib/fastclick.min.js"></script>
@@ -34,35 +35,47 @@
 
     <div class="view splitview">
         
-        <header>
-            <a class="menuButton" data-left-menu="left" data-transition="cover" style="float:left"></a>
+        <header class="header">
+            <a class="menuButton" data-right-menu="right" data-transition="cover" style="float:right"></a>
             <title>The Shift</title>
         </header>
         
         <div class="pages">
-            <div class="panel" id="main" data-title="Main" data-selected="true">
-                <img href="img/logo.png" style="width: 200px;">
+
+			<div class="panel" id="main" data-title="Main" data-selected="true">
+                <img src="img/logo.png">
+				<p>31ST OF MAY - 1ST OF JUNE 2017</p>
             </div>
-            <div class="panel" id="page2" data-title="Page 2">
-                This is Page 3
+
+			<div class="panel" id="schedule" data-title="Page 2">
+                SCHEDULE
             </div>
-            <div class="panel" id="page3" data-title="Page 2">
-                This is Page 3
+
+			<div class="panel" id="speakers" data-title="Page 3">
+                Speaker introductions
             </div>
+
+			<div class="panel" id="info" data-title="Page 3">
+                Info
+            </div>
+
         </div>
 
-        <nav id="left">
+        <nav id="right">
             <div class="view active">
-                <header>
-                    <h1>Left</h1>
-                </header>
                 <div class="pages">
                     <div class="panel active" id="navPage1" data-title="Foobar">
                         <ul class="list">
-                            <li><a href="#main" onclick="$.afui.clearHistory()">Main Page</a></li>
-                            <li><a href="#page2" onclick="$.afui.clearHistory()">Page Two</a></li>
-                            <li><a href="#page2" onclick="$.afui.clearHistory()">Page Three</a></li>
-                        </ul>
+
+							<li><a href="#main" onclick="$.afui.clearHistory()"><span class="icon home"></span></a></li>
+
+							<li><a href="#schedule" onclick="$.afui.clearHistory()"><span class="icon paper"></span></a></li>
+
+							<li><a href="#speakers" onclick="$.afui.clearHistory()"><span class="icon mic"></span></a></li>
+
+							<li><a href="#info" onclick="$.afui.clearHistory()"><span class="icon info"></span></a></li>
+
+						</ul>
                     </div>
                 </div>
             </div>

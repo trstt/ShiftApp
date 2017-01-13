@@ -1,0 +1,51 @@
+.view{
+	background-color: #fff;
+}
+#main img{
+    display: block;
+    margin: 30vh auto 20px auto;
+}
+#main p{
+	text-align: center;
+}
+.view header{
+	line-height 200px;
+	background: linear-gradient(-180deg, #af286e, #fff);
+	border: none;
+}
+#right {
+    width: 80px;
+}
+.list li{
+	padding: 20px 0;
+	width: 80px;
+	text-align: center;
+}
+.list li a{
+	display: block;
+	width: 62px;
+	height:62px;
+	padding:0;
+	margin: 0 auto;
+	background-color: #af286e;
+	border-radius: 100%;
+}
+a .icon{
+	display: block;
+	width: 100%;
+    height: 100%;
+	line-height: 62px;
+	text-indent: 10px;
+    font-size: 28px;
+	color: #fff;
+}
+#navPage1 .icon:active{
+	opacity: 0.6;
+}
+
+/*piilottaa ikonien jälkeiset nuolet menussa*/
+.list > li > a:after, .list > li .chevron:after{
+  content: "";
+  display: table;
+  clear: both;
+}
