@@ -5,13 +5,21 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-side-menu-js/sample.zip",
       "projectGuid": "14647ac0-a37d-4311-9450-709a55a28e58",
-      "lastModifiedDate": 1484295029175,
+      "lastModifiedDate": 1484298955580,
       "creationDate": 1484295005812
     },
     "sourceDirectory": "www",
     "cordovaPluginsDirectory": "plugins",
     "startFile": "index.html",
-    "projectFiles": {},
+    "projectFiles": {
+      "xdk-publish-meta-data.json": {
+        "settings": {
+          "project": {
+            "XDK-not-deployed": "True"
+          }
+        }
+      }
+    },
     "projectDirectories": {
       "www/xdk": {
         "settings": {
@@ -132,7 +140,7 @@
         "appName_": "ShiftApp",
         "appID_": "not.yet.specified",
         "appAccess_": {
-          "mode": "legacy",
+          "mode": "whitelist",
           "network": [
             "*"
           ],
@@ -146,7 +154,8 @@
             "itms:*",
             "itms-apps:*"
           ],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
@@ -168,7 +177,7 @@
         "appName_": "ShiftApp",
         "appID_": "not.yet.specified",
         "appAccess_": {
-          "mode": "legacy",
+          "mode": "whitelist",
           "network": [
             "*"
           ],
@@ -180,7 +189,8 @@
             "mailto:*",
             "geo:*"
           ],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
