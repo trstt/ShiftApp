@@ -1,27 +1,33 @@
-.view{
+/* android and ios7 view and pages */
+.android, .android .view, .android .view .pages, .ios7, .ios7 .view, .ios7 .view .pages, .view .pages, .view{
 	background-color: #fff;
+	color: #000;
 }
+/* images in #main */
 #main img{
     display: block;
-    margin: 30vh auto 20px auto;
+    margin: 10vh auto 20px auto;
+	width: 70%;
 }
+/* paragraph style in #main */
 #main p{
 	text-align: center;
 }
-.view header{
-	line-height 200px;
+/* header styles for android and ios7 */
+.android .view header, .ios7 .view header, .view header{
 	background: linear-gradient(-180deg, #af286e, #fff);
 	border: none;
 }
+/* menu bar */
 #right {
+	top: 80px;;
     width: 80px;
+	border: none;
+	box-shadow: none;
 }
-.list li{
-	padding: 20px 0;
-	width: 80px;
-	text-align: center;
-}
+/* link element in menu */
 .list li a{
+	text-align: center;
 	display: block;
 	width: 62px;
 	height:62px;
@@ -30,6 +36,11 @@
 	background-color: #af286e;
 	border-radius: 100%;
 }
+.list li {
+	border: none;
+	padding: 0 0 40px 0;
+}
+/* icon inside the link element */
 a .icon{
 	display: block;
 	width: 100%;
@@ -39,13 +50,39 @@ a .icon{
     font-size: 28px;
 	color: #fff;
 }
-#navPage1 .icon:active{
+/* active menu icon */
+#navPage1 .icon:active {
 	opacity: 0.6;
 }
-
-/*piilottaa ikonien jälkeiset nuolet menussa*/
+/* hides the arrows after icons in the menu*/
 .list > li > a:after, .list > li .chevron:after{
   content: "";
   display: table;
   clear: both;
+}
+/* button elements */
+button {
+	display: block;
+	margin: 20px auto;
+	padding: 15px 40px;
+	border: none;
+	border-radius: 15px;
+	background-color: #af286e;
+	color: #fff;
+}
+button:active{
+	background-color: rgba(175, 40, 110, 0.85);
+}
+#allIcons{
+	width: 100%;
+}
+#allIcons span{
+	display: block;
+	margin: 5px auto;
+	width: 100px;
+	font-size: 20px;
+}
+#allIcons span:after{
+	content: attr(class) ;
+	font-size: 12px;
 }
