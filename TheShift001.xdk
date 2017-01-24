@@ -5,13 +5,21 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "673c32bb-099a-4f9f-b9ef-81309661e8be",
-      "lastModifiedDate": 1484894701373,
+      "lastModifiedDate": 1484904319221,
       "creationDate": 1484894669153
     },
     "XDK-app-designer": "false",
     "sourceDirectory": "www",
     "startFile": "index.html",
-    "projectFiles": {},
+    "projectFiles": {
+      "xdk-publish-meta-data.json": {
+        "settings": {
+          "project": {
+            "XDK-not-deployed": "True"
+          }
+        }
+      }
+    },
     "projectDirectories": {},
     "libraries": [],
     "serviceMethods": [],
@@ -126,7 +134,7 @@
         "appName_": "TheShift001",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
-          "mode": "legacy",
+          "mode": "whitelist",
           "network": [
             "*"
           ],
@@ -140,7 +148,8 @@
             "itms:*",
             "itms-apps:*"
           ],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
@@ -166,7 +175,7 @@
         "appName_": "TheShift001",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
-          "mode": "legacy",
+          "mode": "whitelist",
           "network": [
             "*"
           ],
@@ -178,7 +187,8 @@
             "mailto:*",
             "geo:*"
           ],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
