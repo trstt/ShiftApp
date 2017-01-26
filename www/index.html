@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/shift-styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-
 </head>
 
 <body>
@@ -35,13 +34,52 @@
         </div>
     </div>
 </nav>
+<div class="container">
+    <p>Hello, Cordova!</p>
 
-<p>Hello, Cordova!</p>
+    <p><input type="button" onclick="oauth2_login()" value="Oauth2 Login"></p>
+    <div id="logs"></div>
+    <div id="logs2"></div>
+</div>
 
 
 
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
+<script type="text/javascript" src="js/cordova.oauth2.js"></script>
+<script>
+    // template for new oauth2 service
+    function oauth2_login() {
+        $.oauth2({
+            auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
+            response_type: 'code',      // required - "code"/"token"
+            token_url: 'https://www.linkedin.com/uas/oauth2/accessToken',          // required if response_type = 'code'
+            client_id: '78p3krb1oky5vx',          // required
+            client_secret: 'ptIkcf2REN9hSiEZ',      // required if response_type = 'code'
+            redirect_uri: 'http://localhost/',       // required - some dummy url
+            other_params: {scope: 'r_basicprofile', state: 'oujeeoujeeoujeea'}        // optional params object for scope, state, display...
+        }, function(token, response){
+            // do something with token or response
+            var authtoken = 'bearer'+token
+            $('#logs').html(token);
+            $.ajax({
+                url: "https://api.linkedin.com/v1/people/~?(:id)format=json?oauth_token="+token,
+                type: "GET",
+                Host: "api.linkedin.com",
+                Connection: "Keep-Alive",
+                Authorization: authtoken,
+                success: function(data) {
+                    $('#logs2').html(data);
+                }
+            });
+        }, function(error, response){
+            // do something with error object
+            $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
+            $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
+        });
+    }
+</script>
+</head>
 </body>
 </html>
