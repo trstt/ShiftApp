@@ -55,6 +55,9 @@
             <p><input type="button" onclick="oauth2_login()" value="Oauth2 Login"></p>
             <div id="logs"></div>
             <div id="logs2"></div>
+			<img src="img/banner.png">
+			<img src="img/kartta.svg">
+
         </div>
     </div>
 </div>
@@ -66,6 +69,15 @@
 <script type="text/javascript" src="js/cordova.oauth2.js"></script>
 <script type='application/javascript' src='js/fastclick.js'></script>
 <script>
+
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		if (cordova.platformId == 'android') {
+			StatusBar.show();
+			StatusBar.backgroundColorByHexString("#333");
+		}
+	}
+
     $(function() {
         FastClick.attach(document.body);
     });
@@ -75,15 +87,15 @@
     });
 
     $('.closeMenu').tapend(function(){
-        $('.wrapper').animate({left:'-110px'});
+        $('.wrapper').animate({left:'-7.2em'});
         $(this).css('display', 'none');
     });
-
+/*
     $('#content').swiperight(function(){
         $('.wrapper').animate({left:'0px'});
         $('#closeMenu').css('display','block');
     });
-
+*/
     // template for new oauth2 service
     function oauth2_login() {
         $.oauth2({
