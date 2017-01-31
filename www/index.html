@@ -70,20 +70,17 @@
         FastClick.attach(document.body);
     });
     $('#openMenu').tapend(function(){
-        $('#menu').animate({left:'0px'});
-        $('#content').animate({left:'110px'});
+        $('.wrapper').animate({left:'0px'});
         $('#closeMenu').css('display','block');
     });
 
     $('.closeMenu').tapend(function(){
-        $('#menu').animate({left:'-110px'});
-        $('#content').animate({left:'0px'});
+        $('.wrapper').animate({left:'-110px'});
         $(this).css('display', 'none');
     });
 
-    $('.wrapper').swiperight(function(){
-        $('#menu').animate({left:'0px'});
-        $('#content').animate({left:'110px'});
+    $('#content').swiperight(function(){
+        $('.wrapper').animate({left:'0px'});
         $('#closeMenu').css('display','block');
     });
 
