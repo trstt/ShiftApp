@@ -19,7 +19,7 @@
     <!-- docs: https://github.com/apache/cordova-plugin-statusbar -->
     <!-- see http://devgirl.org/2014/07/31/phonegap-developers-guid -->
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarBackgroundColor" value="#f1486f" />
     <preference name="StatusBarStyle" value="lightcontent" />
 </platform>
 
@@ -27,6 +27,19 @@
     <!-- below requires the splash screen plugin -->
     <!-- docs: https://github.com/apache/cordova-plugin-splashscreen -->
     <preference name="SplashMaintainAspectRatio" value="false" />
+        <!-- below requires the splash screen plugin -->
+    <!-- docs: https://github.com/apache/cordova-plugin-splashscreen -->
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="FadeSplashScreen" value="false"/>
+    <preference name="FadeSplashScreenDuration" value="2"/>
+    <preference name="ShowSplashScreenSpinner" value="false"/>
+
+    <!-- below requires the status bar plugin -->
+    <!-- docs: https://github.com/apache/cordova-plugin-statusbar -->
+    <!-- see http://devgirl.org/2014/07/31/phonegap-developers-guid -->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#f1486f" />
+    <preference name="StatusBarStyle" value="lightcontent" />
 </platform>
 
 <!-- use this feature to add command-lines to be used by Crosswalk builds on device -->

@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "673c32bb-099a-4f9f-b9ef-81309661e8be",
-      "lastModifiedDate": 1485439139362,
+      "lastModifiedDate": 1485864934408,
       "creationDate": 1484894669153
     },
     "XDK-app-designer": "false",
@@ -61,24 +61,6 @@
         "checksum": "2373ccea"
       },
       {
-        "id": "cordova-plugin-splashscreen",
-        "version": "3.2.2",
-        "selectedState": "Included",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": [],
-        "originType": "cordova.io",
-        "origin": "cordova-plugin-splashscreen",
-        "permissions": {},
-        "topLevel": true,
-        "gitref": "",
-        "name": "Splashscreen",
-        "description": "Cordova Splashscreen Plugin",
-        "checksum": "47137083",
-        "cordovaVersion": ">=3.1.0"
-      },
-      {
         "id": "cordova-plugin-inappbrowser",
         "name": "InAppBrowser",
         "version": "1.4.0",
@@ -107,11 +89,12 @@
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "21",
           "android-installLocation": "auto",
-          "android-signed": true
+          "android-signed": true,
+          "Orientation": "portrait"
         },
         "isActive_": true,
-        "certificateId_": "",
-        "appName_": "TheShift001",
+        "certificateId_": "dyUcASFD7EKU-ccxf6Ltog2",
+        "appName_": "The Shift 2017",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
           "mode": "whitelist",
@@ -129,14 +112,39 @@
           ],
           "navigation": []
         },
-        "icons_": [],
+        "icons_": [
+          {
+            "density": "xhdpi",
+            "relPath": "package-assets/xhdpi.png",
+            "width": 96,
+            "height": 96
+          },
+          {
+            "density": "ldpi",
+            "relPath": "package-assets/ldpi.png",
+            "width": 36,
+            "height": 36
+          },
+          {
+            "density": "mdpi",
+            "relPath": "package-assets/mdpi.png",
+            "width": 48,
+            "height": 48
+          },
+          {
+            "density": "hdpi",
+            "relPath": "package-assets/hdpi.png",
+            "width": 72,
+            "height": 72
+          }
+        ],
         "splashes_": [],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "19",
         "appVersion_": "0.0.1",
-        "appDescription_": "Universal init code for Intel XDK and Cordova device ready detection, as well as within browser.",
+        "appDescription_": "The Official App for The Shift 2017",
         "appAuthor_": "Intel XDK",
         "appVersionCode_": "1",
         "signed_": true
@@ -149,7 +157,7 @@
           "ios-configuration": "adhoc",
           "deployment-target": "8.0"
         },
-        "isActive_": true,
+        "isActive_": false,
         "certificateId_": "",
         "appName_": "TheShift001",
         "appID_": "xdk.intel.cordova.template.lite",
@@ -190,7 +198,7 @@
           "windows-publisher-display-name": "",
           "windows-publisher-id": ""
         },
-        "isActive_": true,
+        "isActive_": false,
         "certificateId_": "",
         "appName_": "TheShift001",
         "appID_": "xdk.intel.cordova.template.lite",

@@ -4,16 +4,20 @@
 
 body {
     overflow-x: hidden;
-	font: 15px arial, sans-serif;
+	font: 14px arial, sans-serif;
 }
 
 /*navigation bar*/
 .navbar {
+	position: absolute;
+	top:0;
     background: #f1486f;
     border-radius: 0;
     border:0;
     height:80px;
     width: 100%;
+	z-index: 2;
+	/*box-shadow: 0px 8px 20px #ccc;*/
 }
 .navbar i{
     margin:0;
@@ -37,13 +41,32 @@ body {
     width: 100vw;
 }
 #content{
+	/*background: url(../img/purple-haze2.jpg);
+	background-size: cover;
+	background-position: top center;*/
 	position: absolute;
 	top:0;
 	left: 7.2em;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     margin:0;
     padding:0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.container{
+	position: absolute;
+	text-align: center;
+	width: 90%;
+	min-height: 100%;
+	top: 0;
+	padding: 0;
+	margin-top: 100px;
+	margin-left: 25px;
+	margin-right: 25px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	z-index:1;
 }
 #menu{
     text-align: center;
@@ -72,13 +95,20 @@ body {
 }
 #menu ul li i:before{
 }
-
+#swipeOpenMenu{
+    position: absolute;
+    top:0;
+    left:0;
+	width: 25px;
+	height: 100vh;
+	z-index: 2;
+}
 #closeMenu {
     display:none;
     position: absolute;
     top:0;
     left:0;
     height: 100%;
-    width:100%;
-    z-index: 3;
+    width: 100%;
+	z-index: 3;
 }

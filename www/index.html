@@ -43,6 +43,7 @@
         </ul>
     </div>
     <div id="content">
+	    <div class="swipeOpenMenu" id="swipeOpenMenu"></div>
         <div class="closeMenu" id="closeMenu"></div>
         <nav class="navbar navbar-default">
             <a id="openMenu" class="navbar-brand" href="#">
@@ -51,13 +52,24 @@
         </nav>
 
         <div class="container">
-            <p>Hello, Cordova!</p>
-            <p><input type="button" onclick="oauth2_login()" value="Oauth2 Login"></p>
+            <h2>THE SHIFT 2017</h2>
+            <!--<p><input type="button" onclick="oauth2_login()" value="Oauth2 Login"></p>
             <div id="logs"></div>
-            <div id="logs2"></div>
-			<img src="img/banner.png">
-			<img src="img/kartta.svg">
+            <div id="logs2"></div>-->
+						<hr>
 
+			<h4>Let's get to know each other</h4>
+			<input type="text" name="input" id="input" placeholder="Hello, my name is..."></input>
+
+			<input type="button" name="send" id="send" value=">>>"></input>
+			<br><hr><br>
+			<p id="greetings"></p>
+			<br><hr>
+			<input type="button" name="erase" id="erase" value="Poista nimitiedot"></input>
+			<br><br>
+
+			<img src="img/kartta.svg">
+			<img src="img/kartta.svg">
         </div>
     </div>
 </div>
@@ -70,32 +82,62 @@
 <script type='application/javascript' src='js/fastclick.js'></script>
 <script>
 
-	document.addEventListener("deviceready", onDeviceReady, false);
-	function onDeviceReady() {
-		if (cordova.platformId == 'android') {
-			StatusBar.show();
-			StatusBar.backgroundColorByHexString("#333");
-		}
-	}
-
-    $(function() {
+	$(function() {
         FastClick.attach(document.body);
     });
     $('#openMenu').tapend(function(){
-        $('.wrapper').animate({left:'0px'});
+        $('.wrapper').animate(
+			{left: '0'},
+			200,
+			"linear"
+		);
         $('#closeMenu').css('display','block');
-    });
+    }).stop(true);
+	$('#swipeOpenMenu').tapmove(function(){
+        $('.wrapper').animate(
+			{left: '0'},
+			200,
+			"swing"
+		);
+        $('#closeMenu').css('display','block');
+    }).stop(true);
 
-    $('.closeMenu').tapend(function(){
-        $('.wrapper').animate({left:'-7.2em'});
+    $('.closeMenu').on('tapend tapmove', function(){
+        $('.wrapper').animate(
+			{
+				left: '-7.2em',
+			},
+			100,
+			"swing"
+		);
         $(this).css('display', 'none');
-    });
+    }).stop(true);
 /*
     $('#content').swiperight(function(){
         $('.wrapper').animate({left:'0px'});
         $('#closeMenu').css('display','block');
     });
 */
+
+	$('#send').on('tap', function(){
+		localStorage.userName = $('#input').val();
+		introductions();
+	});
+
+	$('#erase').on('tap', function(){
+		localStorage.removeItem('userName');
+	});
+
+	introductions();
+	function introductions (){
+		if(localStorage.userName != undefined){
+			$('#greetings').html('Welcome <strong>' +localStorage.userName +'</strong>!<br><br><a href="">Check out todays awesome <strong>schedule</strong></a>');
+
+		}else{
+			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
+		}
+	}
+
     // template for new oauth2 service
     function oauth2_login() {
         $.oauth2({
