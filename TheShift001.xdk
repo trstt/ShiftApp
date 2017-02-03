@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "673c32bb-099a-4f9f-b9ef-81309661e8be",
-      "lastModifiedDate": 1485864934408,
+      "lastModifiedDate": 1486110493561,
       "creationDate": 1484894669153
     },
     "XDK-app-designer": "false",
@@ -61,6 +61,24 @@
         "checksum": "2373ccea"
       },
       {
+        "id": "cordova-plugin-splashscreen",
+        "version": "3.2.2",
+        "selectedState": "Included",
+        "data": {},
+        "paramvals": {},
+        "dependsOn": [],
+        "dependedBy": [],
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-splashscreen",
+        "permissions": {},
+        "topLevel": true,
+        "gitref": "",
+        "name": "Splashscreen",
+        "description": "Cordova Splashscreen Plugin",
+        "checksum": "47137083",
+        "cordovaVersion": ">=3.1.0"
+      },
+      {
         "id": "cordova-plugin-inappbrowser",
         "name": "InAppBrowser",
         "version": "1.4.0",
@@ -89,8 +107,7 @@
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "21",
           "android-installLocation": "auto",
-          "android-signed": true,
-          "Orientation": "portrait"
+          "android-signed": true
         },
         "isActive_": true,
         "certificateId_": "dyUcASFD7EKU-ccxf6Ltog2",
@@ -114,12 +131,6 @@
         },
         "icons_": [
           {
-            "density": "xhdpi",
-            "relPath": "package-assets/xhdpi.png",
-            "width": 96,
-            "height": 96
-          },
-          {
             "density": "ldpi",
             "relPath": "package-assets/ldpi.png",
             "width": 36,
@@ -136,6 +147,12 @@
             "relPath": "package-assets/hdpi.png",
             "width": 72,
             "height": 72
+          },
+          {
+            "density": "xhdpi",
+            "relPath": "package-assets/xhdpi.png",
+            "width": 96,
+            "height": 96
           }
         ],
         "splashes_": [],
@@ -144,7 +161,7 @@
         "cordovaCLIVersion_": "6.2.0",
         "crosswalkVersion_": "19",
         "appVersion_": "0.0.1",
-        "appDescription_": "The Official App for The Shift 2017",
+        "appDescription_": "Application for Shift 2017",
         "appAuthor_": "Intel XDK",
         "appVersionCode_": "1",
         "signed_": true
