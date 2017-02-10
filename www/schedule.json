@@ -1,0 +1,171 @@
+{
+    "wednesday":
+    [
+        {
+            "venue": "Main stage",
+            "color": "",
+            "schedule": [
+                {
+                    "id": "wms001",
+                    "name": "Opening show",
+                    "company": "",
+                    "time": "10.15 - 10.45",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 4,
+                    "duration": 2,
+                    "type": "show"
+                },
+                {
+                    "id": "wms002",
+                    "name": "Henrik Hauptop Lund",
+                    "company": "Uni Denmark",
+                    "time": "11.00 - 11.45",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 7,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms003",
+                    "name": "Jaana Tuominen",
+                    "company": "Paulig",
+                    "time": "12.00 - 12.45",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 11,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms004",
+                    "name": "Christoph Auer-Welsbach",
+                    "company": "IBM",
+                    "time": "13.15 - 14.00",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 16,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms005",
+                    "name": "TBA",
+                    "company": "TBA",
+                    "time": "14.15 - 15.00",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 20,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms006",
+                    "name": "Alan Laubsch",
+                    "company": "Natural Capital market",
+                    "time": "15.15 - 16.00",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 24,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms007",
+                    "name": "Show",
+                    "company": "Wonderful night",
+                    "time": "15.15 - 16.00",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 29,
+                    "duration": 2,
+                    "type": "keynote"
+                }
+            ]
+        },
+        {
+            "venue": "Amphi",
+            "color": "",
+            "schedule": [
+                {
+                    "id": "wms001",
+                    "name": "Opening show",
+                    "company": "",
+                    "time": "10.15 - 10.45",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 4,
+                    "duration": 2,
+                    "type": "show"
+                },
+                {
+                    "id": "wms002",
+                    "name": "Henrik Hauptop Lund",
+                    "company": "Uni Denmark",
+                    "time": "11.00 - 11.45",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 7,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms003",
+                    "name": "Jaana Tuominen",
+                    "company": "Paulig",
+                    "time": "12.00 - 12.45",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 11,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms004",
+                    "name": "Christoph Auer-Welsbach",
+                    "company": "IBM",
+                    "time": "13.15 - 14.00",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 16,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms005",
+                    "name": "TBA",
+                    "company": "TBA",
+                    "time": "14.15 - 15.00",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 20,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms006",
+                    "name": "Alan Laubsch",
+                    "company": "Natural Capital market",
+                    "time": "15.15 - 16.00",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 24,
+                    "duration": 3,
+                    "type": "keynote"
+                },
+                {
+                    "id": "wms007",
+                    "name": "Show",
+                    "company": "Wonderful night",
+                    "time": "15.15 - 16.00",
+                    "startTime": "10:15",
+                    "endTime": "10:45",
+                    "start": 29,
+                    "duration": 2,
+                    "type": "keynote"
+                }
+            ]
+        }
+    ]
+}

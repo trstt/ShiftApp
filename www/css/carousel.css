@@ -8,26 +8,69 @@ body {
 .carousel-inner {
     height: 100%;
 }
+.carousel-header{
+    position: absolute;
+    top:3vh;
+    left:8vw;
+}
+.carousel-header h2{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1vmin;
+    font-size: 8vw;
+    text-align: left;
+    font-weight: bold;
+    color: #a01e64;
+    margin-bottom: 0.5vh;
+}
+.carousel-header h3{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1vmin;
+    margin:0;
+    color: #000;
+    text-align: left;
+    font-size: 5vw;
+}
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.6);
     width: 100vw;
-    height:30vh;
+    height:60vh;
+    text-indent: 1vw;
     padding: 0;
-    bottom: -22vh;
+    bottom: -44vh;
     left:0;
 }
-.carousel-caption h3{
-    min-height: 8vh;
-    font-size: 1.5em;
+.carousel-caption h4{
+    padding: 0;
+    margin: 0;
+    min-height: 16vh;
+    line-height: 4vh;
+    font-size: 5.2vw;
+}
+.carousel-caption p{
+    padding: 0 5vw;
+    text-align: justify;
+}
+.carousel-caption #arrowUp{
+    display: block;
+    font-weight: lighter;
+    margin: 0 auto;
+    font-size: 2.2vh;
+    line-height: 4vh;
+    color: #f7f7f8;
 }
 .carousel-control.right, .carousel-control.left {
     background-image: none;
     background-color: none;
+    margin-bottom: 16vh;
 }
+.carousel-control.right i, .carousel-control.left i{
+    display: none;
+}
+
 
 .fill {
     width: 100vw;
-    height: 88vh;
+    height: 91vh;
     background-repeat: no-repeat;
     background-position: top;
     -webkit-background-size: cover;

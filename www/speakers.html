@@ -30,6 +30,11 @@
         <ul>
             <li>
                 <a href="index.html">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="schedule.html">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                 </a>
             </li>
@@ -71,9 +76,16 @@
                     <div class="fill" style="background-image:url(img/speakers/dino.png);"></div>
                     <a href="#fullintro" data-transition="slideup">
                         <div data-role="main" id="shortintro">
+                            <div class="carousel-header">
+                                <h2>TOM JONES</h2>
+                                <h3>SINGER</h3>
+                            </div>
                             <div class="carousel-caption">
-                                <h3>#learning #mobile</h3>
-                                <p>#learning #mobile again and again</p>
+                                <h4><i id="arrowUp" class="fa fa-chevron-up" aria-hidden="true"></i>
+                                    <span style = "color: #e64696;">#</span>learning
+                                    <span style = "color: #ffb41e;">#</span>mobile
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             </div>
                         </div>
                     </a>
@@ -81,35 +93,57 @@
 
                 <div class="item">
                   <div class="fill" style="background-image:url('img/speakers/dino.png');"></div>
+                    <div class="carousel-header">
+                        <h2>ETUNIMI SUKUNIMI</h2>
+                        <h3>ALAOTSIKKO</h3>
+                    </div>
                     <div class="carousel-caption">
-                        <h3>#pöhinä #kupla</h3>
+                        <h4><i id="arrowUp" class="fa fa-chevron-up" aria-hidden="true"></i>
+                            <span style = "color: #e64696;">#</span>pöhinä
+                            <span style = "color: #ffb41e;">#</span>kupla
+                        </h4>
                         <p>lorem ipsum</p>
                     </div>
                 </div>
 
                 <div class="item">
                   <div class="fill" style="background-image:url('img/speakers/dino.png');"></div>
+                    <div class="carousel-header">
+                        <h2>BRIAN WONG</h2>
+                        <h3>FOUNDER OF FUNZI</h3>
+                    </div>
                     <div class="carousel-caption">
-                        <h3>#johnwayne #computers</h3>
+                        <h4><i id="arrowUp" class="fa fa-chevron-up" aria-hidden="true"></i>
+                            <span style = "color: #e64696;">#</span>johnwayne
+                            <span style = "color: #ffb41e;">#</span>computers</h4>
                         <p>Speaker3 speaks about speaking on speakers.</p>
                     </div>
                 </div>
 
                 <div class="item">
-                  <div class="fill" style="background-image:url('img/speakers/dino.png');"></div>
+                  <div class="fill" style="background-image:url('img/speakers/cecilia-tham.png');"></div>
+                    <div class="carousel-header">
+                        <h2>CECILIA THAM</h2>
+                        <h3>/Mob /FabCafe</h3>
+                    </div>
                     <div class="carousel-caption">
-                        <h3>#internet #google</h3>
-                        <p>Speaker4 speaks about speaking on speakers.</p>
+                        <h4><i id="arrowUp" class="fa fa-chevron-up" aria-hidden="true"></i>
+                            <span style = "color: #e64696;">#</span>innovation
+                            <span style = "color: #ffb41e;">#</span>community<br>
+                            <span style = "color: #e64696;">#</span>co-creation
+                        </h4>
+                        <p>Cecilia Tham has centered her focus on building communities for innovation with a focus in design and technology. She is a serial entrepreneur, launched various business and start-ups, beginning with Makers of Barcelona (MOB) and FabCafe Barcelona. MOB is a collaborative community co-working facility. FabCafe is a new concept that brings digital fabrication tools to the everyday environment of a coffee shop. She is also the founder of Assemble.rs, an online open innovation management platform that enables all to assemble, accelerate and analyze innovation individually and collectively. Her latest venture is FutureFunded.co, a community funding platform focus on learning.
+She is also the founder of MEAT a co-creative agency that enables companies to transform with design and technology. Cecilia is a designer and biologist by training, a serial entrepreneur by choice, and a maker for life. She is a 4-times TEDx Barcelona speaker, as well as in Open FAD and 4YFN. She is currently the adjunct professor at Parsons New School Strategic Design and Management and professor of Social Innovation Change at Toulouse Business School. She is a mentor at Google Launchpad Barcelona, Startupbootcamp IoT & Data, and Harvard Innovation Lab.</p>
                     </div>
                 </div>
 
               <!-- Left and right controls -->
               <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 <span class="sr-only">Previous</span>
               </a>
               <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 <span class="sr-only">Next</span>
               </a>
             </div>
@@ -146,14 +180,15 @@
     $('.closeMenu').on('tapend tapmove', function(){
         $('.wrapper').animate(
 			{
-				left: '-7.2em',
+				left: '-15vw',
 			},
 			100,
 			"swing"
 		);
         $(this).css('display', 'none');
     }).stop(true);
-/*
+
+/*  // MENU SWIPE FROM LEFT
     $('#content').swiperight(function(){
         $('.wrapper').animate({left:'0px'});
         $('#closeMenu').css('display','block');
@@ -163,6 +198,7 @@
     $("#myCarousel").swiperight(function() {
         $("#myCarousel").carousel('prev');
     });
+
     $("#myCarousel").swipeleft(function() {
         $("#myCarousel").carousel('next');
     });
@@ -170,13 +206,12 @@
     $(".carousel-caption").tapend(function(){
         $(this).animate({bottom:'0vh'},200);
         $('.closeMenu').css('display','block');
-
-      });
+    });
 
     $('.closeMenu').on('tapend tapmove', function(){
-        $(".carousel-caption").animate({bottom:'-22vh'},200);
+        $(".carousel-caption").animate({bottom:'-44vh'},200);
         $(this).css('display','none');
-    })
+    });
 
     // USER INFO
 	$('#send').on('tap', function(){
@@ -195,8 +230,8 @@
 
 		}else{
 			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
-		}
-	}
+		};
+	};
 
     // LINKEDIN OAUTH2
     function oauth2_login() {
@@ -227,7 +262,7 @@
             $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
             $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
         });
-    }
+    };
 </script>
 </body>
 </html>
