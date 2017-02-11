@@ -107,16 +107,20 @@
                 </div>
 
                 <div class="item">
-                  <div class="fill" style="background-image:url('img/speakers/dino.png');"></div>
+                  <div class="fill" style="background-image:url('img/speakers/NeilHarbisson.png');"></div>
                     <div class="carousel-header">
-                        <h2>BRIAN WONG</h2>
-                        <h3>FOUNDER OF FUNZI</h3>
+                        <h2>NEIL HARBISSON</h2>
+                        <h3>/Cyborg /Artist</h3>
                     </div>
                     <div class="carousel-caption">
                         <h4><i id="arrowUp" class="fa fa-chevron-up" aria-hidden="true"></i>
-                            <span style = "color: #e64696;">#</span>johnwayne
-                            <span style = "color: #ffb41e;">#</span>computers</h4>
-                        <p>Speaker3 speaks about speaking on speakers.</p>
+                            <span style = "color: #e64696;">#</span>cybernetics
+                            <span style = "color: #ffb41e;">#</span>humanandmachine</h4>
+                        <div class="intro">
+                            <p>
+                                <strong>NEIL HARBISSON</strong> is a Catalan-raised, British-born contemporary artist and cyborg activist best known for having an antenna implanted in his skull and for being officially recognized as a cyborg by a government. The antenna allows him to perceive visible and invisible colours such as infrareds and ultraviolets via sound waves. The antenna’s Internet connection allows him to receive colors from space as well as images, videos, music or phone calls directly into his head via external devices such as mobile phones or satellites. Harbisson identifies himself as a cyborg, he feels both his mind and body are united to cybernetics. He doesn’t feel he is using or wearing technology, instead he feels he is technology. His artworks investigate the relationship between colour and sound, experiment the boundaries of human perception and explore the use of artistic expression via sensory extensions. In 2010 he co­-founded the Cyborg Foundation with Moon Ribas, an international organization that aims to help humans become cyborgs, defend cyborg rights and promote cyborgism as a social and artistic movement.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -132,8 +136,14 @@
                             <span style = "color: #ffb41e;">#</span>community<br>
                             <span style = "color: #e64696;">#</span>co-creation
                         </h4>
-                        <p>Cecilia Tham has centered her focus on building communities for innovation with a focus in design and technology. She is a serial entrepreneur, launched various business and start-ups, beginning with Makers of Barcelona (MOB) and FabCafe Barcelona. MOB is a collaborative community co-working facility. FabCafe is a new concept that brings digital fabrication tools to the everyday environment of a coffee shop. She is also the founder of Assemble.rs, an online open innovation management platform that enables all to assemble, accelerate and analyze innovation individually and collectively. Her latest venture is FutureFunded.co, a community funding platform focus on learning.
-She is also the founder of MEAT a co-creative agency that enables companies to transform with design and technology. Cecilia is a designer and biologist by training, a serial entrepreneur by choice, and a maker for life. She is a 4-times TEDx Barcelona speaker, as well as in Open FAD and 4YFN. She is currently the adjunct professor at Parsons New School Strategic Design and Management and professor of Social Innovation Change at Toulouse Business School. She is a mentor at Google Launchpad Barcelona, Startupbootcamp IoT & Data, and Harvard Innovation Lab.</p>
+                        <div class="intro">
+                            <p>
+                                <strong>CECILIA THAM</strong> has centered her focus on building communities for innovation with a focus in design and technology. She is a serial entrepreneur, launched various business and start-ups, beginning with Makers of Barcelona (MOB) and FabCafe Barcelona. MOB is a collaborative community co-working facility. FabCafe is a new concept that brings digital fabrication tools to the everyday environment of a coffee shop. She is also the founder of Assemble.rs, an online open innovation management platform that enables all to assemble, accelerate and analyze innovation individually and collectively. Her latest venture is FutureFunded.co, a community funding platform focus on learning.
+                            </p>
+                            <p>
+                                She is also the founder of MEAT a co-creative agency that enables companies to transform with design and technology. Cecilia is a designer and biologist by training, a serial entrepreneur by choice, and a maker for life. She is a 4-times TEDx Barcelona speaker, as well as in Open FAD and 4YFN. She is currently the adjunct professor at Parsons New School Strategic Design and Management and professor of Social Innovation Change at Toulouse Business School. She is a mentor at Google Launchpad Barcelona, Startupbootcamp IoT & Data, and Harvard Innovation Lab.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -153,11 +163,11 @@ She is also the founder of MEAT a co-creative agency that enables companies to t
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
 <script type="text/javascript" src="js/cordova.oauth2.js"></script>
-<script type='application/javascript' src='js/fastclick.js'></script>
+        <script type='application/javascript' src='js/jquery.nicescroll.js'></script>
 <script>
     // SIDE MENU
-	$(function() {
-        FastClick.attach(document.body);
+	$(document).ready(function() {
+        $(".intro").niceScroll();
     });
 
     $('#openMenu').tapend(function(){
@@ -205,12 +215,20 @@ She is also the founder of MEAT a co-creative agency that enables companies to t
 
     $(".carousel-caption").tapend(function(){
         $(this).animate({bottom:'0vh'},200);
-        $('.closeMenu').css('display','block');
+        $(this).find('#arrowUp').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        $('.closeMenu').css({
+            'display': 'block',
+            'height': '44vh'
+            });
     });
 
     $('.closeMenu').on('tapend tapmove', function(){
         $(".carousel-caption").animate({bottom:'-44vh'},200);
-        $(this).css('display','none');
+        $(".carousel-caption").find('#arrowUp').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        $(this).css({
+            'display': 'none',
+            'height': 'initial'
+        });
     });
 
     // USER INFO

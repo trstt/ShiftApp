@@ -38,6 +38,7 @@ body {
     padding: 0;
     bottom: -44vh;
     left:0;
+    z-index: 4;
 }
 .carousel-caption h4{
     padding: 0;
@@ -46,9 +47,15 @@ body {
     line-height: 4vh;
     font-size: 5.2vw;
 }
+.carousel-caption .intro{
+    height: 44vh;
+    overflow: scroll;
+    z-index: 4;
+}
 .carousel-caption p{
-    padding: 0 5vw;
+    padding: 0 5vw 5vw 5vw;
     text-align: justify;
+    z-index: 4;
 }
 .carousel-caption #arrowUp{
     display: block;
@@ -61,13 +68,11 @@ body {
 .carousel-control.right, .carousel-control.left {
     background-image: none;
     background-color: none;
-    margin-bottom: 16vh;
+    height: 20vh;
 }
 .carousel-control.right i, .carousel-control.left i{
     display: none;
 }
-
-
 .fill {
     width: 100vw;
     height: 91vh;
