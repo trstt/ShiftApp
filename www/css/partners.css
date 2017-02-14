@@ -1,0 +1,56 @@
+.partner01{
+    background: url(../img/partners/partner01.png);
+}
+.partner02{
+    background: url(../img/partners/partner02.png);
+}
+.partner03{
+    background: url(../img/partners/partner03.png);
+}
+.partner04{
+    background: url(../img/partners/partner04.png);
+}
+.partner05{
+    background: url(../img/partners/partner05.png);
+}
+.partner06{
+    background: url(../img/partners/partner06.png);
+}
+.partner07{
+    background: url(../img/partners/partner07.png);
+}
+.partner08{
+    background: url(../img/partners/partner08.png);
+}
+.partner{
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: center center;
+    -moz-background-size: center center;
+    background-size: center center;
+    -o-background-size: center center;
+    height: 20vh;
+}
+.partner:last-child{
+    margin-bottom: 110vh;
+}
+
+.infotext{
+    opacity: 0;
+    padding: 0 5vw;
+    margin-top: 25vh;
+    text-align: justify;
+}
+.maxed{
+    height: 85vh;
+    background-position: top center;
+}
+.noScroll{
+    overflow-y: hidden;
+}
+.showText{
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}

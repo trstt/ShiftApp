@@ -1,9 +1,76 @@
 .row{
     overflow: hidden;
     height: 25vh;
+    margin: 0;
+    padding: 0 0;
 }
 
-[class*="col-"]{
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
+
+
+
+.fill{
+    background-repeat: no-repeat;
+    background-position: top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+#speaker1{
+    background-image:url(../img/speakers/dino.png);
+
+}
+
+#speaker2{
+    background-image:url(../img/speakers/dino.png);
+
+}
+
+#speaker3{
+
+}
+
+#speaker {
+    height:25vh;
+    border:1vw solid #fff;
+    background-repeat: no-repeat;
+    background-position: top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    padding:0;
+}
+
+[id^='speaker'] a{
+    display:block;
+    min-width:100%;
+    min-height:100%;
+    background-repeat: no-repeat;
+    background-size:20vh 15vw;
+    background-position:bottom;
+    background-image:url('../img/speakers/viivat.png');
+    position:relative;
+    text-align: left;
+
+}
+
+#art {
+    width:inherit;
+}
+
+[id^='speaker'] a span {
+    position:absolute;
+    bottom:0    ;
+    left:0;
+    padding: 1vmin;
+    font-size: 4vw;
+    text-align: left;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5vh;
+     font-family: 'Gilroy-ExtraBold', Fallback, sans-serif;
+    text-transform:uppercase;
+
 }

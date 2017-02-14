@@ -38,7 +38,7 @@
     <!-- docs: https://github.com/apache/cordova-plugin-statusbar -->
     <!-- see http://devgirl.org/2014/07/31/phonegap-developers-guid -->
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#b71d40" />
+    <preference name="StatusBarBackgroundColor" value="#a01e64" />
     <preference name="StatusBarStyle" value="lightcontent" />
 </platform>
 

@@ -5,6 +5,9 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+ol{
+    display: none;
+}
 .carousel-inner {
     height: 100%;
 }

@@ -39,12 +39,17 @@
                 </a>
             </li>
             <li>
-                <a href="speakers.html">
+                <a href="speakersgrid.html">
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
                 <i class="fa fa-map-o" aria-hidden="true"></i>
+            </li>
+            <li>
+                <a href="partners.html">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </a>
             </li>
             <li>
                 <i class="fa fa-info" aria-hidden="true"></i>
@@ -79,7 +84,7 @@
 
     $(function(){
         $.getJSON('schedule.json',function(data){
-            console.log(data.wednesday[0].schedule.length)
+            //console.log(data.wednesday[0].schedule.length)
             for(i = 0; i<data.wednesday.length; i++){
                 $('.container').append('<div><strong>' + data.wednesday[i].venue + '</strong></div>');
                 for(j = 0; j<data.wednesday[i].schedule.length; j++){
