@@ -63,12 +63,12 @@
         <div class="container">
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000000">
               <!-- Indicators -->
-              <!--<ol class="carousel-indicators">
+              <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
                 <li data-target="#myCarousel" data-slide-to="3"></li>
-              </ol>-->
+              </ol>
 
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
@@ -187,6 +187,18 @@
 <script src="js/jquery.mobile-events.min.js"></script>
 <script type="text/javascript" src="js/cordova.oauth2.js"></script>
 <script>
+    $(document).ready(function(){
+        function qs(key) {
+            key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+            var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
+            var slide = match && decodeURIComponent(match[1].replace(/\+/g, " "));
+            if (Math.floor(slide) == slide && $.isNumeric(slide))
+                return parseInt(slide);
+            else
+                return 0;
+        }
+                $('#myCarousel').carousel(qs('slide'));
+    });
     // SIDE MENU
 
     $('#openMenu').tapend(function(){

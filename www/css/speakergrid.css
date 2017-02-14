@@ -1,0 +1,9 @@
+.row{
+    overflow: hidden;
+    height: 25vh;
+}
+
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
