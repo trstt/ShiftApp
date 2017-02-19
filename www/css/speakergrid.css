@@ -1,13 +1,10 @@
 .row{
     overflow: hidden;
-    height: 25vh;
+    height: 40vh;
+	width:100vw;
     margin: 0;
-    padding: 0 0;
+    padding: 0;
 }
-
-
-
-
 .fill{
     background-repeat: no-repeat;
     background-position: top;
@@ -17,23 +14,8 @@
     -o-background-size: cover;
 }
 
-#speaker1{
-    background-image:url(../img/speakers/dino.png);
-
-}
-
-#speaker2{
-    background-image:url(../img/speakers/dino.png);
-
-}
-
-#speaker3{
-
-}
-
 #speaker {
-    height:25vh;
-    border:1vw solid #fff;
+    height: 40vh;
     background-repeat: no-repeat;
     background-position: top;
     -webkit-background-size: cover;
@@ -47,10 +29,9 @@
     display:block;
     min-width:100%;
     min-height:100%;
-    background-repeat: no-repeat;
-    background-size:20vh 15vw;
-    background-position:bottom;
-    background-image:url('../img/speakers/viivat.png');
+    background: url('../img/speakers/viivat.png') center bottom no-repeat;
+	background-size: 26vh;
+    /*background-color: RGBA(230, 70, 150, 0.1);*/
     position:relative;
     text-align: left;
 
@@ -61,16 +42,20 @@
 }
 
 [id^='speaker'] a span {
-    position:absolute;
-    bottom:0    ;
-    left:0;
+	display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     padding: 1vmin;
-    font-size: 4vw;
-    text-align: left;
+    font-size: 8vw;
+	line-height: 3.5vh;
+	width: 100%;
+    white-space: nowrap;
+    overflow:hidden;
     font-weight: bold;
-    color: #fff;
-    margin-bottom: 0.5vh;
-     font-family: 'Gilroy-ExtraBold', Fallback, sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    padding: auto 0;
+    font-family: 'Gilroy-ExtraBold', Fallback, sans-serif;
     text-transform:uppercase;
-
+	text-align: justify;
 }

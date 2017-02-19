@@ -5,6 +5,11 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+#myCarousel{
+	width: 100vw;
+	margin: 0;
+	padding: 0
+}
 ol{
     display: none;
 }

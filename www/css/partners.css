@@ -31,25 +31,17 @@
     -o-background-size: center center;
     height: 20vh;
 }
-.partner:last-child{
-    margin-bottom: 110vh;
-}
 
-.infotext{
-    opacity: 0;
+.infotext {
+    display:none;
     padding: 0 5vw;
-    margin-top: 25vh;
     text-align: justify;
 }
-.maxed{
-    height: 85vh;
-    background-position: top center;
-}
-.noScroll{
-    overflow-y: hidden;
+.bottom{
+    z-index: -10;
 }
 .showText{
-    opacity: 1;
+    display: block;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;

@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/shift-styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/partners.css" rel="stylesheet">
 </head>
-
 <body>
 <div class="wrapper">
     <div id="menu">
@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li>
-                <a href="speakers.html">
+                <a href="speakersgrid.html">
                     <i class="fa fa-microphone" aria-hidden="true"></i>
                 </a>
             </li>
@@ -57,7 +57,7 @@
         </ul>
     </div>
     <div id="content">
-	    <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
+        <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
         <div class="closeMenu" id="closeMenu"></div>
         <nav class="navbar navbar-default">
             <a id="openMenu" class="navbar-brand" href="#">
@@ -66,45 +66,66 @@
         </nav>
 
         <div class="container">
+            <div class="col-xs-12 partner partner01">
+                <div class="infotext">
+                    <p>GE (NYSE: GE) is the world’s Digital Industrial Company, transforming industry with software-defined machines and solutions that are connected, responsive and predictive. GE is organized around a global exchange of knowledge, the "GE Store," through which each business shares and accesses the same technology, markets, structure and intellect. Each invention further fuels innovation and application across our industrial sectors. With people, services, technology and scale, GE delivers better outcomes for customers by speaking the language of industry.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 partner partner02">
+                <div class="infotext">
+                    <p>Werstas is a workspace and community. In addition to great co-workers, potential business partners and the excellent coffee, Werstas has the best solutions for businesses of different sizes, freelancers and long distance workers.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 partner partner03">
+                <div class="infotext">
+                    <p>Est sit enim est dolor. Et laboriosam quam autem explicabo sit quo dignissimos. Quos deserunt eum magni quas recusandae sit. Placeat quo autem tempora quis. Voluptas harum et aut. Quis nam ea dolorem placeat esse sunt quia.</p>
+                </div>
+            </div>
+            <!---<div class="col-xs-12 partner partner04">
+                <div class="infotext">
+                    <p>Omnis qui voluptates quos. Sed est repellat nihil repellendus. Eaque aut quis odit nobis corrupti deserunt ad. Vel sit laboriosam atque consectetur et. Nesciunt at alias tenetur. Id vero autem est corrupti odit non voluptate soluta.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 partner partner05">
+                <div class="infotext">
+                    <p>Turun Sanomat is the leading local media and one of the biggest newspaper in Finland.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 partner partner06">
+                <div class="infotext">
+                    <p>Rerum velit accusantium similique autem. Esse qui est consequuntur architecto quas quidem. Nostrum quod enim ad ullam culpa et mollitia. Repellat doloremque est aperiam eaque soluta placeat quae. Vitae placeat placeat adipisci dolorem consequatur.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 partner partner07">
+                <div class="infotext">
+                    <p>Autem et quibusdam aut aut unde laboriosam. Qui possimus voluptas dolorem aut aliquam et voluptatem. Amet et vitae sit est facilis aspernatur illo.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 partner partner08">
+                <div class="infotext">
+                    <p>Consequatur officia natus tempora magnam. Consequuntur omnis ducimus alias ullam autem. Debitis sed facere omnis.</p>
+                </div>
+            </div>--->
         </div>
     </div>
-</div>
-
-
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
 <script type="text/javascript" src="js/cordova.oauth2.js"></script>
-<script type='application/javascript' src='js/fastclick.js'></script>
 <script>
-
-	$(function() {
-        FastClick.attach(document.body);
+    $(document).ready(function(){
+        function qs(key) {
+            key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+            var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
+            var slide = match && decodeURIComponent(match[1].replace(/\+/g, " "));
+            if (Math.floor(slide) == slide && $.isNumeric(slide))
+                return parseInt(slide);
+            else
+                return 0;
+        }
+        $('#myCarousel').carousel(qs('slide'));
     });
-
-    $(function(){
-        $.getJSON('schedule.json',function(data){
-            //console.log(data.wednesday[0].schedule.length)
-            for(i = 0; i<data.wednesday.length; i++){
-                $('.container').append('<div><strong>' + data.wednesday[i].venue + '</strong></div>');
-                for(j = 0; j<data.wednesday[i].schedule.length; j++){
-                    $('.container').append(
-                        '<div>'+
-                        data.wednesday[i].schedule[j].name + ', ' +
-                        data.wednesday[i].schedule[j].company + '<br>' + data.wednesday[i].schedule[j].time
-                        + '</div>'
-                    );
-                };
-                $('.container').append('<hr>');
-            };
-
-            /*$.each(data.employees,function(i,emp){
-                $('ul').append('<li>'+emp.firstName+' '+emp.lastName+'</li>');
-            });*/
-        });
-    });
-
-
+    // SIDE MENU
 
     $('#openMenu').tapend(function(){
         $('.wrapper').animate(
@@ -133,13 +154,53 @@
 		);
         $(this).css('display', 'none');
     }).stop(true);
-/*
+
+    //PARTNER INFO
+    $('.partner').tapend(function(){
+        var partner = $(this);
+        var top = partner.offset().top
+        partner.toggleClass('maxed');
+        partner.children('.infotext').toggleClass('showText');
+        partner.siblings('.partner').toggleClass('hide');
+        /*partner.hasClass('maxed') ? top = 0: top = partner.offset().top - (window.innerHeight/100*15);
+        $('.container').animate({ scrollTop: top }, 1);*/
+        $('.container').toggleClass('noScroll')
+    });
+
+/*  // MENU SWIPE FROM LEFT
     $('#content').swiperight(function(){
         $('.wrapper').animate({left:'0px'});
         $('#closeMenu').css('display','block');
     });
 */
+    // SPEAKER INTRO CAROUSEL
+    $("#myCarousel").swiperight(function() {
+        $("#myCarousel").carousel('prev');
+    });
 
+    $("#myCarousel").swipeleft(function() {
+        $("#myCarousel").carousel('next');
+    });
+
+    $(".carousel-caption").tapend(function(){
+        $(this).animate({bottom:'0vh'},200);
+        $(this).find('#arrowUp').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        $('.closeMenu').css({
+            'display': 'block',
+            'height': '54vh'
+            });
+    });
+
+    $('.closeMenu').on('tapend tapmove', function(){
+        $(".carousel-caption").animate({bottom:'-50vh'},200);
+        $(".carousel-caption").find('#arrowUp').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        $(this).css({
+            'display': 'none',
+            'height': '100vh'
+        });
+    });
+
+    // USER INFO
 	$('#send').on('tap', function(){
 		localStorage.userName = $('#input').val();
 		introductions();
@@ -156,10 +217,10 @@
 
 		}else{
 			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
-		}
-	}
+		};
+	};
 
-    // template for new oauth2 service
+    // LINKEDIN OAUTH2
     function oauth2_login() {
         $.oauth2({
             auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
@@ -188,7 +249,7 @@
             $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
             $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
         });
-    }
+    };
 </script>
 </body>
 </html>
