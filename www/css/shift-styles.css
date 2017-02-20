@@ -57,7 +57,7 @@ body {
 .navbar a{
     height: 100%;
     margin:0;
-    padding: 0;
+    padding: 0.5vh 1.5vw 0 1.5vw;
     text-align: center
 }
 
