@@ -29,7 +29,7 @@ body {
     font-size: 7vw;
 	color: #370c2c;
 }
-p{
+#paragraph p{
 	text-align: justify;
 	margin: 3vh 4vw;
 }
