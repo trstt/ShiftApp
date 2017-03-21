@@ -13,7 +13,6 @@
     background-size: cover;
     -o-background-size: cover;
 }
-
 #speaker {
     height: 40vh;
     background-repeat: no-repeat;
@@ -24,7 +23,6 @@
     -o-background-size: cover;
     padding:0;
 }
-
 [id^='speaker'] a{
     display:block;
     min-width:100%;
@@ -34,13 +32,10 @@
     /*background-color: RGBA(230, 70, 150, 0.1);*/
     position:relative;
     text-align: left;
-
 }
-
 #art {
     width:inherit;
 }
-
 [id^='speaker'] a span {
 	display: block;
     position: absolute;

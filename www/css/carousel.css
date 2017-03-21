@@ -96,3 +96,10 @@ ol{
     background-size: cover;
     -o-background-size: cover;
 }
+.intro p{
+	color: #fff;
+	font-size: 4vw;
+}
+.carousel-caption h4{
+	color: #fff;
+}

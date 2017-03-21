@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/shift-styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+	<style>
+		::-webkit-scrollbar {
+			display:none;
+		}
+	</style>
 </head>
 
 <body>
@@ -44,11 +49,13 @@
                 </a>
             </li>
             <li>
-                <i class="fa fa-map-o" aria-hidden="true"></i>
+				<a href="map.html">
+                	<i class="fa fa-map-o" aria-hidden="true"></i>
+				</a>
             </li>
             <li>
-                <a href="partners.html">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
+                <a href="matchma.html">
+                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
@@ -66,16 +73,40 @@
         </nav>
 
         <div class="container">
-            <div style="height: 40vh; display: -webkit-flex; display: flex; align-items: flex-end; justify-content: center">
-            	<h1 style="color:#000; padding-bottom: 4vh;">THE SHIFT 2017</h1>
+			<div class="introduction">
+				<img class="logo" src="img/Shift_Color.png">
+				<h1>BUSINESS FESTIVAL</h1>
+				<h3>31.5. - 1.6.2017</h3>
+				<img class="divider" src="img/divider.jpeg">
+				<div id="clockdiv" style="position: relative;">
+					<div>
+						<span class="time days"></span>
+						<span class="time hours"></span>
+						<span class="time minutes"></span>
+						<span class="time seconds"></span>
+					</div>
+					<div class="timetextwrap">
+						<span class="timetext">DAYS</span>
+						<span class="timetext">HRS</span>
+						<span class="timetext">MIN</span>
+						<span class="timetext">SEC</span>
+					</div>
+				</div>
+				<a href="http://theshift.fi/tickets" target="_system"><input type="button" value="GET A TICKET"></input></a>
 			</div>
-            <!--<p><input type="button" onclick="oauth2_login()" value="Oauth2 Login"></p>
-            <div id="logs"></div>
-            <div id="logs2"></div>-->
+			<div id="paragraph">
+				<h4>SHIFT 2017</h4>
+				<p>
+					SHIFT is a business festival where every participant is crucial for making SHIFT happen. At SHIFT you can participate in round-table discussions, one-on-one meetings and workshops, as well as listen to keynotes and panel discussions. SHIFT will take place at the Castle of Turku on the 31st of May and the 1st of June 2017.
+				</p>
+			</div>
+			<div class="shortcut">
+				<a href="speakers.html"><input type="button" value="SPEAKERS"></input></a><a href="map.html"><input type="button" value="MAP"></input></a><a href=""><input type="button" value="ABOUT"></input></a>
+			</div>
+			<div class="newsletter">
+				<a href="http://theshift.fi/#HTMLBlock1320" target="_system"><input type="button" value="SUBSCRIBE TO THE NEWSLETTER"></input></a>
+			</div>
 
-            <h3 style="text-align: left; padding-left: 30vw">BUSINESS<br><br>
-            INSPIRATION<br><br>
-            LEARNING</h3>
 			<!---<input type="text" name="input" id="input" placeholder="Hello, my name is..."></input>
 
 			<input type="button" name="send" id="send" value=">>>"></input>
@@ -102,6 +133,51 @@
 	$(function() {
         FastClick.attach(document.body);
     });
+
+	/////// COUNTDOWN ///////
+	function getTimeRemaining(endtime) {
+	  var t = Date.parse(endtime) - Date.parse(new Date());
+	  var seconds = Math.floor((t / 1000) % 60);
+	  var minutes = Math.floor((t / 1000 / 60) % 60);
+	  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+	  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+	  return {
+		'total': t,
+		'days': days,
+		'hours': hours,
+		'minutes': minutes,
+		'seconds': seconds
+	  };
+	}
+
+	function initializeClock(id, endtime) {
+	  var clock = document.getElementById(id);
+	  var daysSpan = clock.querySelector('.days');
+	  var hoursSpan = clock.querySelector('.hours');
+	  var minutesSpan = clock.querySelector('.minutes');
+	  var secondsSpan = clock.querySelector('.seconds');
+
+	  function updateClock() {
+		var t = getTimeRemaining(endtime);
+
+		daysSpan.innerHTML = t.days;
+		hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+		minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+		secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+		if (t.total <= 0) {
+		  clearInterval(timeinterval);
+		}
+	  }
+
+	  updateClock();
+	  var timeinterval = setInterval(updateClock, 1000);
+	}
+
+	var deadline = 'May 31 2017 00:00:00 GMT+0200'
+	//new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+	initializeClock('clockdiv', deadline);
+
     $('#openMenu').tapend(function(){
         $('.wrapper').animate(
 			{left: '0'},
