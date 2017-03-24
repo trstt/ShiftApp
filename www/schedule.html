@@ -22,8 +22,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/shift-styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link href="css/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/shift-styles-schedule.css">
+
+    <link rel="stylesheet" type="text/css" href="fonts/GlacialIndifference-Bold.otf">
+    <link rel="stylesheet" type="text/css" href="fonts/GlacialIndifference-Italic.otf">
+    <link rel="stylesheet" type="text/css" href="fonts/GlacialIndifference-Regular.otf">
+    <link rel="stylesheet" type="text/css" href="fonts/Gilroy-ExtraBold.otf">
+    <link rel="stylesheet" type="text/css" href="fonts/Gilroy-Light.otf">
+
 </head>
+
 <body>
 <div class="wrapper">
     <div id="menu">
@@ -44,13 +52,11 @@
                 </a>
             </li>
             <li>
-				<a href="map.html">
-                	<i class="fa fa-map-o" aria-hidden="true"></i>
-				</a>
+                <i class="fa fa-map-o" aria-hidden="true"></i>
             </li>
             <li>
-                <a href="matchma.html">
-                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                <a href="partners.html">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
@@ -59,7 +65,7 @@
         </ul>
     </div>
     <div id="content">
-        <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
+	    <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
         <div class="closeMenu" id="closeMenu"></div>
         <nav class="navbar navbar-default">
             <a id="openMenu" class="navbar-brand" href="#">
@@ -67,28 +73,100 @@
             </a>
         </nav>
 
-        <div class="container" style="background: url('img/schedule.jpeg') center top no-repeat;background-size:cover;">
+        <div class="container scheBody">
+            <div class="container-fluid padding">
+    <div class="date">
 
+
+        <div class="tues day"><p onClick="onWednesday()">WEDNESDAY <span style="font-family:Gilroy-ExtraBold">31.5</span></p></div>
+        <div class="wed day"><p  onClick="onThursday()">THURSDAY <span style="font-family:Gilroy-ExtraBold">1.6</span></p></div>
+
+    </div>
+</div>
+
+
+
+    <div class="container-fluid padding">
+        <div class="schedule">
+            <div class="time">
+                <p>10:00</p>
+                <p>10:15</p>
+                <p>10:30</p>
+                <p>10:45</p>
+                <p>11:00</p>
+                <p>11:15</p>
+                <p>11:30</p>
+                <p>11:45</p>
+                <p>12:00</p>
+                <p>12:15</p>
+                <p>12:30</p>
+                <p>12:45</p>
+                <p>13:00</p>
+                <p>13:15</p>
+                <p>13:30</p>
+                <p>13:45</p>
+                <p>14:00</p>
+                <p>14:15</p>
+                <p>14:30</p>
+                <p>14:45</p>
+                <p>15:00</p>
+                <p>15:15</p>
+                <p>15:30</p>
+                <p>15:45</p>
+                <p>16:00</p>
+                <p>16:15</p>
+                <p>16:30</p>
+                <p>16:45</p>
+                <p>17:00</p>
+            </div>
+            <div class="info">
+                <div class="main-stage child" id="main-stage">
+                    <div class="area"><h5>MAIN<br>STAGE</h5></div>
+                </div>
+
+                <div class="park child" id="park">
+                    <div class="area"><h5>PARK</h5></div>
+                </div>
+
+                <div class="summerstage child" id="summerstage">
+                    <div class="area"><h5>SUMMER<br>STAGE</h5></div>
+                </div>
+
+                <div class="lordscellar child" id="lordscellar">
+                    <div class="area"><h5>LORD'S<br>CELLAR</h5></div>
+                </div>
+
+                <div class="workshop child" id="workshop">
+                    <div class="area"><h5>WORK<br>SHOP</h5></div>
+                </div>
+            </div>
+    </div>
+
+
+
+
+</div>
         </div>
     </div>
+</div>
+
+
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
 <script type="text/javascript" src="js/cordova.oauth2.js"></script>
+<script type='application/javascript' src='js/fastclick.js'></script>
 <script>
-    $(document).ready(function(){
-        function qs(key) {
-            key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
-            var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
-            var slide = match && decodeURIComponent(match[1].replace(/\+/g, " "));
-            if (Math.floor(slide) == slide && $.isNumeric(slide))
-                return parseInt(slide);
-            else
-                return 0;
-        }
-        $('#myCarousel').carousel(qs('slide'));
+    $(".wed").on("tap", function(){
+        $(this).css("background-color", "rgb(250,230,149)");
+        $(".tues").css("background-color", "#fec248");
     });
-    // SIDE MENU
+
+    $(".tues").on("tap", function(){
+        $(this).css("background-color", "rgb(250,230,149)");
+        $('.wed').css("background-color", "#fec248");
+    });
+
 
     $('#openMenu').tapend(function(){
         $('.wrapper').animate(
@@ -97,6 +175,7 @@
 			"linear"
 		);
         $('#closeMenu').css('display','block');
+
     }).stop(true);
 	$('#swipeOpenMenu').tapmove(function(){
         $('.wrapper').animate(
@@ -116,91 +195,70 @@
 			"swing"
 		);
         $(this).css('display', 'none');
+
     }).stop(true);
 
-/*  // MENU SWIPE FROM LEFT
-    $('#content').swiperight(function(){
-        $('.wrapper').animate({left:'0px'});
-        $('#closeMenu').css('display','block');
-    });
-*/
-    // SPEAKER INTRO CAROUSEL
-    $("#myCarousel").swiperight(function() {
-        $("#myCarousel").carousel('prev');
-    });
+    $(function() {
+        $.getJSON('sche.json', function(data) {
+            var stage = ["tent", "park", "bryggman", "kingsHall", "werstas"];
+            data.wed.stage = stage;
 
-    $("#myCarousel").swipeleft(function() {
-        $("#myCarousel").carousel('next');
-    });
+            var stagehtml = ["main-stage", "park", "summerstage", "lordscellar", "workshop"];
 
-    $(".carousel-caption").tapend(function(){
-        $(this).animate({bottom:'0vh'},200);
-        $(this).find('#arrowUp').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-        $('.closeMenu').css({
-            'display': 'block',
-            'height': '54vh'
-            });
-    });
+            for (var x=0; x<5; x++){
+                for (var y=0; y<data.wed[stage[x]].length; y++) {
+                    document.getElementById(stagehtml[x]).innerHTML += "<div class='box " + data.wed[stage[x]]  [y].duration + ' ' + data.wed[stage[x]][y].nextin + ' ' + data.wed[stage[x]][y].startin  +   "' ' id='" + data.wed[stage[x]][y].category + "'  ><div class='tick'></div><div class='detail'><p class='etime'>" + data.wed[stage[x]][y].time + "</p><p class='title'>" + data.wed[stage[x]][y].title + "</p><p class='desc'>" + data.wed[stage[x]][y].description + "</p></div></div>"
+                }
 
-    $('.closeMenu').on('tapend tapmove', function(){
-        $(".carousel-caption").animate({bottom:'-50vh'},200);
-        $(".carousel-caption").find('#arrowUp').removeClass('fa-chevron-down').addClass('fa-chevron-up');
-        $(this).css({
-            'display': 'none',
-            'height': '100vh'
+            }
+
+
         });
     });
 
-    // USER INFO
-	$('#send').on('tap', function(){
-		localStorage.userName = $('#input').val();
-		introductions();
-	});
+    function onWednesday() {
+        $(".box").remove();
+        $.getJSON('sche.json', function(data) {
+            var stage = ["tent", "park", "bryggman", "kingsHall", "werstas"];
+            data.wed.stage = stage;
 
-	$('#erase').on('tap', function(){
-		localStorage.removeItem('userName');
-	});
+            var stagehtml = ["main-stage", "park", "summerstage", "lordscellar", "workshop"];
 
-	introductions();
-	function introductions (){
-		if(localStorage.userName != undefined){
-			$('#greetings').html('Welcome <strong>' +localStorage.userName +'</strong>!<br><br><a href="">Check out todays awesome <strong>schedule</strong></a>');
-
-		}else{
-			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
-		};
-	};
-
-    // LINKEDIN OAUTH2
-    function oauth2_login() {
-        $.oauth2({
-            auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
-            response_type: 'code',      // required - "code"/"token"
-            token_url: 'https://www.linkedin.com/uas/oauth2/accessToken',          // required if response_type = 'code'
-            client_id: '78p3krb1oky5vx',          // required
-            client_secret: 'ptIkcf2REN9hSiEZ',      // required if response_type = 'code'
-            redirect_uri: 'http://localhost/',       // required - some dummy url
-            other_params: {scope: 'r_basicprofile', state: 'oujeeoujeeoujeea'}        // optional params object for scope, state, display...
-        }, function(token, response){
-            // do something with token or response
-            var authtoken = 'bearer'+token
-            $('#logs').html(token);
-            $.ajax({
-                url: "https://api.linkedin.com/v1/people/~?(:id)format=json?oauth_token="+token,
-                type: "GET",
-                Host: "api.linkedin.com",
-                Connection: "Keep-Alive",
-                Authorization: authtoken,
-                success: function(data) {
-                    $('#logs2').html(data);
+            for (var x=0; x<5; x++){
+                for (var y=0; y<data.wed[stage[x]].length; y++) {
+                    document.getElementById(stagehtml[x]).innerHTML += "<div class='box " + data.wed[stage[x]]  [y].duration + ' ' + data.wed[stage[x]][y].nextin + ' ' + data.wed[stage[x]][y].startin  +   "' ' id='" + data.wed[stage[x]][y].category + "'  ><div class='tick'></div><div class='detail'><p class='etime'>" + data.wed[stage[x]][y].time + "</p><p class='title'>" + data.wed[stage[x]][y].title + "</p><p class='desc'>" + data.wed[stage[x]][y].description + "</p></div></div>"
                 }
-            });
-        }, function(error, response){
-            // do something with error object
-            $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
-            $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
+
+            }
+
+
         });
     };
+
+
+    function onThursday() {
+
+        $(".box").remove();
+
+        $.getJSON('sche.json', function(data) {
+            var stage = ["tent", "park", "bryggman", "kingsHall", "werstas"];
+            data.thu.stage = stage;
+
+            var stagehtml = ["main-stage", "park", "summerstage", "lordscellar", "workshop"];
+
+            for (var x=0; x<5; x++){
+                for (var y=0; y<data.thu[stage[x]].length; y++) {
+                    document.getElementById(stagehtml[x]).innerHTML += "<div class='box " + data.thu[stage[x]][y].duration + ' ' + data.thu[stage[x]][y].nextin + ' ' + data.thu[stage[x]][y].startin  +   "' ' id='" + data.thu[stage[x]][y].category + "'  ><div class='tick'></div><div class='detail'><p class='etime'>" + data.thu[stage[x]][y].time + "</p><p class='title'>" + data.thu[stage[x]][y].title + "</p><p class='desc'>" + data.thu[stage[x]][y].description + "</p></div></div>"
+                }
+
+            }
+
+
+        });
+    };
+
+
+
 </script>
 </body>
 </html>

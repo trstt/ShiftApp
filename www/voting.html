@@ -22,13 +22,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/shift-styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-	<style>
-		::-webkit-scrollbar {
-			display:none;
-		}
-	</style>
+    <link href="css/carousel.css" rel="stylesheet">
 </head>
-
 <body>
 <div class="wrapper">
     <div id="menu">
@@ -49,24 +44,20 @@
                 </a>
             </li>
             <li>
-				<a href="map.html">
-                	<i class="fa fa-map-o" aria-hidden="true"></i>
-				</a>
+                <i class="fa fa-map-o" aria-hidden="true"></i>
             </li>
             <li>
-                <a href="matchma.html">
-                    <i class="fa fa-handshake-o" aria-hidden="true"></i>
+                <a href="partners.html">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
                 </a>
             </li>
             <li>
-				<a href="infopage.html">
-					<i class="fa fa-info" aria-hidden="true"></i>
-				</a>
+                <i class="fa fa-info" aria-hidden="true"></i>
             </li>
         </ul>
     </div>
     <div id="content">
-	    <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
+        <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
         <div class="closeMenu" id="closeMenu"></div>
         <nav class="navbar navbar-default">
             <a id="openMenu" class="navbar-brand" href="#">
@@ -75,110 +66,39 @@
         </nav>
 
         <div class="container">
-			<div class="introduction">
-				<img class="logo" src="img/Shift_Color.png">
-				<h1>BUSINESS FESTIVAL</h1>
-				<h3>31.5. - 1.6.2017</h3>
-				<img class="divider" src="img/divider.jpeg">
-				<div id="clockdiv" style="position: relative;">
-					<div>
-						<span class="time days"></span>
-						<span class="time hours"></span>
-						<span class="time minutes"></span>
-						<span class="time seconds"></span>
-					</div>
-					<div class="timetextwrap">
-						<span class="timetext">DAYS</span>
-						<span class="timetext">HRS</span>
-						<span class="timetext">MIN</span>
-						<span class="timetext">SEC</span>
-					</div>
-				</div>
-				<a href="http://theshift.fi/tickets" target="_system"><input type="button" value="GET A TICKET"></input></a>
-			</div>
-			<div id="paragraph">
-				<h4>SHIFT 2017</h4>
-				<p>
-					SHIFT is a business festival where every participant is crucial for making SHIFT happen. At SHIFT you can participate in round-table discussions, one-on-one meetings and workshops, as well as listen to keynotes and panel discussions. SHIFT will take place at the Castle of Turku on the 31st of May and the 1st of June 2017.
-				</p>
-			</div>
-			<div class="shortcut">
-				<a href="speakers.html"><input type="button" value="SPEAKERS"></input></a><a href="map.html"><input type="button" value="MAP"></input></a><a href=""><input type="button" value="ABOUT"></input></a>
-			</div>
-			<div class="newsletter">
-				<a href="http://theshift.fi/#HTMLBlock1320" target="_system"><input type="button" value="SUBSCRIBE TO THE NEWSLETTER"></input></a>
-			</div>
-
-			<!---<input type="text" name="input" id="input" placeholder="Hello, my name is..."></input>
-
-			<input type="button" name="send" id="send" value=">>>"></input>
-			<br><hr><br>
-			<p id="greetings"></p>
-			<br><hr>
-			<input type="button" name="erase" id="erase" value="Poista nimitiedot"></input>
-			<br><br>
-
-			<img src="img/kartta.svg">
-			<img src="img/kartta.svg">--->
+			<p>VOTING</p>
+			<form name="votingForm" method="post" action="http://localhost/vote.php">
+				<label for="1"><input type="checkbox" value="1" name="votes[]">Speaker 1</label><br>
+				<label for="2"><input type="checkbox" value="2" name="votes[]">Speaker 2</label><br>
+				<label for="3"><input type="checkbox" value="3" name="votes[]">Speaker 3</label><br>
+				<label for="4"><input type="checkbox" value="4" name="votes[]">Speaker 4</label><br>
+				<label for="5"><input type="checkbox" value="5" name="votes[]">Speaker 5</label><br>
+				<label for="6"><input type="checkbox" value="6" name="votes[]">Speaker 6</label><br>
+				<label for="7"><input type="checkbox" value="7" name="votes[]">Speaker 7</label><br>
+				<input type=hidden name="voterUUID" value="12345678901">
+				<input type=submit value="VOTE">
+			</form>
+			<p id="result"></p>
         </div>
     </div>
-</div>
-
-
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
 <script type="text/javascript" src="js/cordova.oauth2.js"></script>
-<script type='application/javascript' src='js/fastclick.js'></script>
 <script>
-
-	$(function() {
-        FastClick.attach(document.body);
+    $(document).ready(function(){
+        function qs(key) {
+            key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+            var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
+            var slide = match && decodeURIComponent(match[1].replace(/\+/g, " "));
+            if (Math.floor(slide) == slide && $.isNumeric(slide))
+                return parseInt(slide);
+            else
+                return 0;
+        }
+        $('#myCarousel').carousel(qs('slide'));
     });
-
-	/////// COUNTDOWN ///////
-	function getTimeRemaining(endtime) {
-	  var t = Date.parse(endtime) - Date.parse(new Date());
-	  var seconds = Math.floor((t / 1000) % 60);
-	  var minutes = Math.floor((t / 1000 / 60) % 60);
-	  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-	  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-	  return {
-		'total': t,
-		'days': days,
-		'hours': hours,
-		'minutes': minutes,
-		'seconds': seconds
-	  };
-	}
-
-	function initializeClock(id, endtime) {
-	  var clock = document.getElementById(id);
-	  var daysSpan = clock.querySelector('.days');
-	  var hoursSpan = clock.querySelector('.hours');
-	  var minutesSpan = clock.querySelector('.minutes');
-	  var secondsSpan = clock.querySelector('.seconds');
-
-	  function updateClock() {
-		var t = getTimeRemaining(endtime);
-
-		daysSpan.innerHTML = t.days;
-		hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-		minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-		secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-		if (t.total <= 0) {
-		  clearInterval(timeinterval);
-		}
-	  }
-
-	  updateClock();
-	  var timeinterval = setInterval(updateClock, 1000);
-	}
-
-	var deadline = 'May 31 2017 00:00:00 GMT+0200'
-	//new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-	initializeClock('clockdiv', deadline);
+    // SIDE MENU
 
     $('#openMenu').tapend(function(){
         $('.wrapper').animate(
@@ -207,13 +127,41 @@
 		);
         $(this).css('display', 'none');
     }).stop(true);
-/*
+
+/*  // MENU SWIPE FROM LEFT
     $('#content').swiperight(function(){
         $('.wrapper').animate({left:'0px'});
         $('#closeMenu').css('display','block');
     });
 */
+    // SPEAKER INTRO CAROUSEL
+    $("#myCarousel").swiperight(function() {
+        $("#myCarousel").carousel('prev');
+    });
 
+    $("#myCarousel").swipeleft(function() {
+        $("#myCarousel").carousel('next');
+    });
+
+    $(".carousel-caption").tapend(function(){
+        $(this).animate({bottom:'0vh'},200);
+        $(this).find('#arrowUp').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        $('.closeMenu').css({
+            'display': 'block',
+            'height': '54vh'
+            });
+    });
+
+    $('.closeMenu').on('tapend tapmove', function(){
+        $(".carousel-caption").animate({bottom:'-50vh'},200);
+        $(".carousel-caption").find('#arrowUp').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        $(this).css({
+            'display': 'none',
+            'height': '100vh'
+        });
+    });
+
+    // USER INFO
 	$('#send').on('tap', function(){
 		localStorage.userName = $('#input').val();
 		introductions();
@@ -230,10 +178,10 @@
 
 		}else{
 			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
-		}
-	}
+		};
+	};
 
-    // template for new oauth2 service
+    // LINKEDIN OAUTH2
     function oauth2_login() {
         $.oauth2({
             auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
@@ -262,7 +210,7 @@
             $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
             $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
         });
-    }
+    };
 </script>
 </body>
 </html>
