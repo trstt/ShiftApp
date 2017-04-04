@@ -22,42 +22,56 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/shift-styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link href="css/carousel.css" rel="stylesheet">
+	<style>
+		::-webkit-scrollbar {
+			display:none;
+		}
+	</style>
 </head>
+
 <body>
 <div class="wrapper">
     <div id="menu">
         <ul>
             <li>
                 <a href="index.html">
-                    <i class="fa fa-home" aria-hidden="true"></i>
+                    HOME
                 </a>
             </li>
             <li>
                 <a href="schedule.html">
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    SCHED
                 </a>
             </li>
             <li>
                 <a href="speakers.html">
-                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                    PROGR
                 </a>
             </li>
             <li>
-                <i class="fa fa-map-o" aria-hidden="true"></i>
+				<a href="map.html">
+                	MAP
+				</a>
+            </li>
+			<li>
+				<a href="voting.html">
+                	VOTING
+				</a>
             </li>
             <li>
-                <a href="partners.html">
-                    <i class="fa fa-heart" aria-hidden="true"></i>
+                <a href="matchma.html">
+                    MATCH<br>MAKING
                 </a>
             </li>
             <li>
-                <i class="fa fa-info" aria-hidden="true"></i>
+				<a href="infopage.html">
+					INFO
+				</a>
             </li>
         </ul>
     </div>
     <div id="content">
-        <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
+	    <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
         <div class="closeMenu" id="closeMenu"></div>
         <nav class="navbar navbar-default">
             <a id="openMenu" class="navbar-brand" href="#">
@@ -69,26 +83,15 @@
 
         </div>
     </div>
+</div>
+
+
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
-<script type="text/javascript" src="js/cordova.oauth2.js"></script>
 <script>
-    $(document).ready(function(){
-        function qs(key) {
-            key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
-            var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
-            var slide = match && decodeURIComponent(match[1].replace(/\+/g, " "));
-            if (Math.floor(slide) == slide && $.isNumeric(slide))
-                return parseInt(slide);
-            else
-                return 0;
-        }
-        $('#myCarousel').carousel(qs('slide'));
-    });
-    // SIDE MENU
-
     $('#openMenu').tapend(function(){
+		console.log('jeppa')
         $('.wrapper').animate(
 			{left: '0'},
 			200,
@@ -115,90 +118,12 @@
 		);
         $(this).css('display', 'none');
     }).stop(true);
-
-/*  // MENU SWIPE FROM LEFT
+/*
     $('#content').swiperight(function(){
         $('.wrapper').animate({left:'0px'});
         $('#closeMenu').css('display','block');
     });
 */
-    // SPEAKER INTRO CAROUSEL
-    $("#myCarousel").swiperight(function() {
-        $("#myCarousel").carousel('prev');
-    });
-
-    $("#myCarousel").swipeleft(function() {
-        $("#myCarousel").carousel('next');
-    });
-
-    $(".carousel-caption").tapend(function(){
-        $(this).animate({bottom:'0vh'},200);
-        $(this).find('#arrowUp').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-        $('.closeMenu').css({
-            'display': 'block',
-            'height': '54vh'
-            });
-    });
-
-    $('.closeMenu').on('tapend tapmove', function(){
-        $(".carousel-caption").animate({bottom:'-50vh'},200);
-        $(".carousel-caption").find('#arrowUp').removeClass('fa-chevron-down').addClass('fa-chevron-up');
-        $(this).css({
-            'display': 'none',
-            'height': '100vh'
-        });
-    });
-
-    // USER INFO
-	$('#send').on('tap', function(){
-		localStorage.userName = $('#input').val();
-		introductions();
-	});
-
-	$('#erase').on('tap', function(){
-		localStorage.removeItem('userName');
-	});
-
-	introductions();
-	function introductions (){
-		if(localStorage.userName != undefined){
-			$('#greetings').html('Welcome <strong>' +localStorage.userName +'</strong>!<br><br><a href="">Check out todays awesome <strong>schedule</strong></a>');
-
-		}else{
-			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
-		};
-	};
-
-    // LINKEDIN OAUTH2
-    function oauth2_login() {
-        $.oauth2({
-            auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
-            response_type: 'code',      // required - "code"/"token"
-            token_url: 'https://www.linkedin.com/uas/oauth2/accessToken',          // required if response_type = 'code'
-            client_id: '78p3krb1oky5vx',          // required
-            client_secret: 'ptIkcf2REN9hSiEZ',      // required if response_type = 'code'
-            redirect_uri: 'http://localhost/',       // required - some dummy url
-            other_params: {scope: 'r_basicprofile', state: 'oujeeoujeeoujeea'}        // optional params object for scope, state, display...
-        }, function(token, response){
-            // do something with token or response
-            var authtoken = 'bearer'+token
-            $('#logs').html(token);
-            $.ajax({
-                url: "https://api.linkedin.com/v1/people/~?(:id)format=json?oauth_token="+token,
-                type: "GET",
-                Host: "api.linkedin.com",
-                Connection: "Keep-Alive",
-                Authorization: authtoken,
-                success: function(data) {
-                    $('#logs2').html(data);
-                }
-            });
-        }, function(error, response){
-            // do something with error object
-            $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
-            $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
-        });
-    };
 </script>
 </body>
 </html>
