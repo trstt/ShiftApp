@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>The  Shift 2017 Official App</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/shift-styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/speaker3.css" rel="stylesheet">
+    <link href="css/program.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div id="menu">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="schedule.html">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="speakers.html">
+                    <i class="fa fa-microphone" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <i class="fa fa-map-o" aria-hidden="true"></i>
+            </li>
+            <li>
+                <a href="partners.html">
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="infopage.html">
+                <i class="fa fa-info" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
+        <div class="closeMenu" id="closeMenu"></div>
+        <nav class="navbar navbar-default">
+            <a id="openMenu" class="navbar-brand" href="#">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+        </nav>
+
+        <div class="container">
+            <div class = tabbar>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                      <!-- Indicators -->
+                      <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                      </ol>
+
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class = "tab SPK active" onclick="location.href='speakers3.html'">SPEAKERS</div>
+                            <div class = "tab ENT" onclick="location.href='program2.html'">ENTERTAINMENT</div>
+                            <div class = "tab WRK" onclick="location.href='program2.html'">WORKSHOPS</div>
+                        </div>
+
+                        <div class="item">
+                            <div class = "tab RND" onclick="location.href='program2.html'">ROUNDTABLES</div>
+                            <div class = "tab PANEL" onclick="location.href='program2.html'">PANEL DISCUSSIONS</div>
+                            <div class = "tab BRD" onclick="location.href='program2.html'">BOARDROOM CHALLENGE</div>
+                        </div>
+
+                        <div class="item">
+                            <div class = "tab MM" onclick="location.href='matchma.html'">MATCHMAKING</div>
+                            <div class = "tab PRE" onclick="location.href='program2.html'">PRE AND SIDE EVENTS</div>
+                            <div class = "tab KAK" onclick="location.href='kakola.html'">KAKOLA</div>
+                        </div>
+
+                        <div class="item">
+                            <div class = "tab DEMO" onclick="openTab(event,'DEMO')">DEMO STAGE</div>
+                            <div class = "tab SNR" onclick="location.href='program2.html'">SENIORS</div>
+                            <div class = "tab PRG" onclick="location.href='program2.html'">PROGRAM</div>
+                        </div>
+                    </div>
+					<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+            	</div>
+            </div>
+            <div class = "SHDW"></div>
+            <div class="vivid-simple-accordion" id="vivid-simple-accordion-8129">
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/gerd-leonhard.jpg')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title">GERD <br>LEONHARD</h2>
+                                <div class="hashtags"><p>#future #business #humanity</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>FUTURIST, HUMANIST, AUTHOR, CEO THE FUTURES AGENCY></h3>
+                        <p class="spkdesc"> Gerd Leonhard is a widely-known and top-rated futurist, with over 1500 engagements in 50+ countries since 2004 and a  combined audience of over 1 million people. Gerd focusses on near-future, ‘nowist’ observations and actionable foresights in the sectors of humanity, society, business and commerce, media, technology and communications. Gerd is also an influential author, a sought-after executive ‘future trainer’ and a trusted strategic advisor. He is the co-author of the best-selling book The Future of Music and the author of 5 other books including ‘The Humanity Challenge’ (June 2016). Gerd is also the host of the web-TV series TheFutureShow and the CEO of TheFuturesAgency, a global network of over 30 leading futurists.
+                            Gerd is considered a leading voice on a wide range of topics including digital transformation and the opportunity-challenges of the coming exponential society, a sustainable business and cultural ecology, social media and communications, TV / film, radio and broadcasting futures, mobile content and commerce, innovation, leadership and entrepreneurship, ‘hard-future’ consumer trends, human-machine futures and AI, cognitive computing, the IoT, big data and automation, next-generation advertising, marketing and branding, as well as sustainability and related ‘green future’ topics.
+                            In 2006, The Wall Street Journal called Gerd ‘one of the leading Media Futurists in the World’. In 2015, Wired Magazine listed Gerd as #88 of the top 100 influencers in Europe. He’s #21 on the global list of futurists. Gerd's keynotes, speeches and presentations are renowned for their hard-hitting and provocative yet inspiring, often humorous and always personal motivational style. Gerd is highly regarded as a global influencer and has advised many business leaders and government officials around the globe. His diverse client list of over 300 companies.</p>
+                    </div>
+                </div>
+
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/melody-hossaini.jpg')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title">MELODY <br>HOSSAINI</h2>
+                                <div class="hashtags"><p>#socialbusiness #development</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>INSPIRENGAGE</h3>
+                        <p class="spkdesc">As a world-leading expert in people development and social enterprise, Melody has designed the InspirEngage Bootcamps to maximise human potential. She is the multi-award winning Founder & CEO of InspirEngage International – based in the UK with a portfolio in 100 countries, having reached 1 million people. Her vision is that change comes from developing human potential for social impact. She became a co-founder of UK Youth Parliament at the age of 13 and is a Government adviser on enterprise and skills having designed a skills development programme which was embedded into the curriculum.
+                            Melody has worked on peace-implementation with Archbishop Desmond Tutu, has been trained by Vice-president Al Gore on climate change at Cambridge and made history being the first social entrepreneur to appear on BBC's 'The Apprentice'. As a champion of women's advancement, Melody has trained hundreds of women to launch their own social enterprise, and is a member of the prestigious CEO Champion's Group of FTSE 100 companies helping women to prosper. Melody has written for the Guardian, Forbes and Huffington Post, appeared on SKY, CNBC and is currently on her international speaking tour 'How to Change the World' as well as coaching individuals 1-2-1 on a programme called 'Invest in Yourself'. Her work has been recognised with several awards, including, 'New European's Most Influential Woman' by the European Parliament in 2015 and Woman of Achievement presented by Prince Charles. Starting as a war-refugee, she has lived in 4 countries and speaks 5 languages, holding a 2:1 LLB Honours Law degree from Oxford Brookes University.</p>
+                    </div>
+                </div>
+
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/Lauri.jpg')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title">LAURI <br>JÄRVILEHTO</h2>
+                                <div class="hashtags"><p>#future #work</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>LIGHTNEER INC / FILOSOFIAN AKATEMIA</h3>
+                        <p class="spkdesc">The future of work Lauri Järvilehto is the CEO and Co-Founder of Lightneer, setting out to bring high quality learning to everybody everywhere and scaling the inclusivity of Finnish education globally. Lauri is a learning enthusiast, serial entrepreneur and a Sherlock Holmes fan. He has a PhD in theoretical philosophy and is the founder of the Academy of Philosophy in Finland. He has also written several bestselling books on learning and thinking.</p>
+                    </div>
+                </div>
+
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/Cecilia-Tham.png')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title">CECILIA <br>THAM</h2>
+                                <div class="hashtags"><p>#innovation #community #co-creation</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>MOB / FABCAFE</h3>
+                        <p class="spkdesc">The building of empowering networks
+                        Cecilia Tham has centered her focus on building communities for innovation with a focus in design and technology. She is a serial entrepreneur, launched various business and start-ups, beginning with Makers of Barcelona (MOB) and FabCafe Barcelona. MOB is a collaborative community co-working facility. FabCafe is a new concept that brings digital fabrication tools to the everyday environment of a coffee shop. She is also the founder of Assemble.rs, an online open innovation management platform that enables all to assemble, accelerate and analyze innovation individually and collectively. Her latest venture is FutureFunded.co, a community funding platform focus on learning.
+                        She is also the founder of MEAT a co-creative agency that enables companies to transform with design and technology. Cecilia is a designer and biologist by training, a serial entrepreneur by choice, and a maker for life. She is a 4-times TEDx Barcelona speaker, as well as in Open FAD and 4YFN. She is currently the adjunct professor at Parsons New School Strategic Design and Management and professor of Social Innovation Change at Toulouse Business School. She is a mentor at Google Launchpad Barcelona, Startupbootcamp IoT & Data, and Harvard Innovation Lab.</p>
+                    </div>
+                </div>
+
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/alan-laubsch.jpg')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title">ALAN <br> LAUBSCH</h2>
+                                <div class="hashtags"><p>#blockchain #ecosystem #network</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>NATURAL CAPITAL MARKET</h3>
+                        <p class="spkdesc">Blockchain
+                            Alan is a passionate risk and ecosystems researcher, and a founder of the Natural Capital Alliance (NCA). Alan currently runs the Natural Capital Markets group at Lykke, which provides instant liquidity for Natural Capital Coins without transaction fees. Alan started his career as a researcher in JPMorgan’s corporate risk management group in New York, after receiving a degree in Industrial Engineering at Stanford University in 1993. He is one of 25 founding members of the RiskMetrics Group (now part of MSCI), where he authored Risk Management: A Practical Guide (1999). Alan became fascinated by systemic risk early warning signals with the onset of the US Subprime crisis in 2007, eventually developing a next generation framework for Integrated Risk Management. Alan is inspired by evolutionary ecosystems, and his most recent publication is Adaptive Risk Management: Powered by Network Science. Alan’s mission is to catalyze a global risk culture to protect the systems that sustain us.</p>
+                    </div>
+                </div>
+
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/Christoph Auer-Welsbach.jpg')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title" style="font-size:3.5vh;letter-spacing:2px">CHRISTOPH <br> AUER-WELSBACH</h2>
+                                <div class="hashtags"><p>#artificial intelligence #future</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>IBM WATSON</h3>
+                        <p class="spkdesc">The future and possibilities of artificial intelligence
+Experienced founder, product manager, venture community builder, and speaker on Artificial Intelligence, Blockchain and Internet of Things. Focusing on Cognitive Computing as the leader of IBM Watson Partner Innovation in Europe, and applied Artificial Intelligence as the initiator of City.AI.  Christoph is from Austria and lives in Netherlands now.</p>
+                    </div>
+                </div>
+
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/NeilHarbisson.jpg')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title">NEIL <br>HARBISSON</h2>
+                                <div class="hashtags"><p>#cybernetics #humanandmachine</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>CYBORG / ARTIST</h3>
+                        <p class="spkdesc">The Renaissance of our Species
+                            Neil Harbisson is a Catalan-raised, British-born contemporary artist and cyborg activist best known for having an antenna implanted in his skull and for being officially recognized as a cyborg by a government. The antenna allows him to perceive visible and invisible colours such as infrareds and ultraviolets via sound waves. The antenna’s Internet connection allows him to receive colors from space as well as images, videos, music or phone calls directly into his head via external devices such as mobile phones or satellites. Harbisson identifies himself as a cyborg, he feels both his mind and body are united to cybernetics. He doesn’t feel he is using or wearing technology, instead he feels he is technology. His artworks investigate the relationship between colour and sound, experiment the boundaries of human perception and explore the use of artistic expression via sensory extensions. In 2010 he co­-founded the Cyborg Foundation with Moon Ribas, an international organization that aims to help humans become cyborgs, defend cyborg rights and promote cyborgism as a social and artistic movement.</p>
+                    </div>
+                </div>
+
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/Henrik-Hautop-Lund.jpg')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title">HENRIK<br>HAUTOP LUND</h2>
+                                <div class="hashtags"><p>#learning #robotics #creativity</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>TECHNICAL UNIVERSITY OF DENMARK</h3>
+                        <p class="spkdesc">Professor Henrik Hautop Lund, Center for Playware, Technical University of Denmark, is World Champion in RoboCup Humanoids Freestyle 2002, and has more than 200 scientific publications. He has developed shape-shifting modular robots, presented to the emperor of Japan, and has collaborated closely on robotics and AI with companies like LEGO, Kompan, BandaiNamco for the past two decades. He has developed technical skill enhancing football games and global connectivity based on modular playware for townships in South Africa for the FIFA World Cup 2010 (together with footballers Laudrup and Hoegh). He invented the RoboCup Junior game, which has now reached more than 1 million kids worldwide, to enhance playful technology for children worldwide. Together with international pop star and World music promoter Peter Gabriel, he has develop the MusicTiles app and MagicCubes as a music 2.0 experience to enhance music creativity amongst everybody, even people with no initial musical skills whatsoever, and used for stage performance during Peter Gabriel’s tour. He has invented to the patented modular interactive tiles for playful prevention and rehabilitation. He is currently board member of the 20m euro Patient@Home project in Denmark – and partner in the 1 billion euro EU Human Brain Project. In all cases, the modular playware technology approach is used in a playful way to enhance learning, creativity and activity amongst anybody, anywhere, anytime.
+                            “Powered by Turku University”.</p>
+                    </div>
+                </div>
+
+                <div class="simple-accordion-group closed">
+                    <div class="simple-accordion-title-shell">
+                        <div class="spkimg" style="background-image:url('img/speakers/Hugh-Williams.jpg')"><img id='lines' src=img/speakers/viivat.png></div>
+                            <div class="spkinfo">
+                                <h2 class="panel-title">HUGH <br>WILLIAMS</h2>
+                                <div class="hashtags"><p>#innovation #impact #leadership</p></div>
+                            </div>
+                    </div>
+                    <div class="simple-accordion-description">
+                        <h3>GOOGLE</h3>
+                        <p class="spkdesc">Hugh Williams has had a career in three parts as an entrepreneur, professor, and technical executive. He is a Vice President of Engineering at Google, and spent 2015 and 2016 leading the Google Maps team. He's also on the board of Redbubble, an artist marketplace. Prior to Google, he held technical executive roles at eBay, Microsoft, Tinder, and Pivotal in the USA. From 1994 to 2004, he was a Professor at RMIT University in Australia, and prior to that he spent five years running his own startup and consultancy in Melbourne. He has published around 120 works, including two best-selling books and more than twenty-five issued US patents. He has a PhD in Computer Science from RMIT University.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mobile-events.min.js"></script>
+<script type="text/javascript" src="js/cordova.oauth2.js"></script>
+<script src="js/accordion.js"></script>
+<script src="js/more.js"></script>
+<script>
+
+    $(".tab").on("tap", function() {
+
+        $('.tab').removeClass('active');
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active');
+        }
+    });
+
+    $(document).ready(function(){
+        function qs(key) {
+            key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+            var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
+            var slide = match && decodeURIComponent(match[1].replace(/\+/g, " "));
+            if (Math.floor(slide) == slide && $.isNumeric(slide))
+                return parseInt(slide);
+            else
+                return 0;
+        }
+        $('#myCarousel').carousel(qs('slide'));
+    });
+    // SIDE MENU
+
+    $('#openMenu').tapend(function(){
+        $('.wrapper').animate(
+			{left: '0'},
+			200,
+			"linear"
+		);
+        $('#closeMenu').css('display','block');
+    }).stop(true);
+	$('#swipeOpenMenu').tapmove(function(){
+        $('.wrapper').animate(
+			{left: '0'},
+			200,
+			"swing"
+		);
+        $('#closeMenu').css('display','block');
+    }).stop(true);
+
+    $('.closeMenu').on('tapend tapmove', function(){
+        $('.wrapper').animate(
+			{
+				left: '-15vw',
+			},
+			100,
+			"swing"
+		);
+        $(this).css('display', 'none');
+    }).stop(true);
+
+/*  // MENU SWIPE FROM LEFT
+    $('#content').swiperight(function(){
+        $('.wrapper').animate({left:'0px'});
+        $('#closeMenu').css('display','block');
+    });
+*/
+    // SPEAKER INTRO CAROUSEL
+    $("#myCarousel").swiperight(function() {
+        $("#myCarousel").carousel('prev');
+    });
+
+    $("#myCarousel").swipeleft(function() {
+        $("#myCarousel").carousel('next');
+    });
+
+    $(".carousel-caption").tapend(function(){
+        $(this).animate({bottom:'0vh'},200);
+        $(this).find('#arrowUp').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        $('.closeMenu').css({
+            'display': 'block',
+            'height': '54vh'
+            });
+    });
+
+    $('.closeMenu').on('tapend tapmove', function(){
+        $(".carousel-caption").animate({bottom:'-50vh'},200);
+        $(".carousel-caption").find('#arrowUp').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        $(this).css({
+            'display': 'none',
+            'height': '100vh'
+        });
+    });
+
+    // USER INFO
+	$('#send').on('tap', function(){
+		localStorage.userName = $('#input').val();
+		introductions();
+	});
+
+	$('#erase').on('tap', function(){
+		localStorage.removeItem('userName');
+	});
+
+	introductions();
+	function introductions (){
+		if(localStorage.userName != undefined){
+			$('#greetings').html('Welcome <strong>' +localStorage.userName +'</strong>!<br><br><a href="">Check out todays awesome <strong>schedule</strong></a>');
+
+		}else{
+			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
+		};
+	};
+
+    // LINKEDIN OAUTH2
+    function oauth2_login() {
+        $.oauth2({
+            auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
+            response_type: 'code',      // required - "code"/"token"
+            token_url: 'https://www.linkedin.com/uas/oauth2/accessToken',          // required if response_type = 'code'
+            client_id: '78p3krb1oky5vx',          // required
+            client_secret: 'ptIkcf2REN9hSiEZ',      // required if response_type = 'code'
+            redirect_uri: 'http://localhost/',       // required - some dummy url
+            other_params: {scope: 'r_basicprofile', state: 'oujeeoujeeoujeea'}        // optional params object for scope, state, display...
+        }, function(token, response){
+            // do something with token or response
+            var authtoken = 'bearer'+token
+            $('#logs').html(token);
+            $.ajax({
+                url: "https://api.linkedin.com/v1/people/~?(:id)format=json?oauth_token="+token,
+                type: "GET",
+                Host: "api.linkedin.com",
+                Connection: "Keep-Alive",
+                Authorization: authtoken,
+                success: function(data) {
+                    $('#logs2').html(data);
+                }
+            });
+        }, function(error, response){
+            // do something with error object
+            $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
+            $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
+        });
+    };
+</script>
+</body>
+</html>

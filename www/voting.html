@@ -20,9 +20,10 @@
     <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
     <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/shift-styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/shift-styles.css">
     <link href="css/carousel.css" rel="stylesheet">
+	<link href="css/pitch.css" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper">
@@ -65,21 +66,56 @@
             </a>
         </nav>
 
-        <div class="container" style="padding-top: 3vh;">
+        <div class="container">
+			<div class = tabbar>
+                <div class ="tab pitch" onclick="location.href='pitch.html'">PITCHERS</div>
+                <div class ="tab vote active" onclick="location.href='voting.html'">VOTING</div>
+            </div>
+            <div class = "SHDW"></div>
 			<h1>Vote for your favorites</h1>
 			<h5 id="voteInfo">5 votes left</h5>
 			<form name="votingForm" id="votingForm" method="post" action="http://c5kj8xbh.c5.suncomet.fi/shift/vote2.php">
 				<div id="votingCompetititors">
-					<label for="1"><input type="checkbox" id="1" value="1" name="votes[]">PITCHER 1</label>
-					<label for="2"><input type="checkbox" id="2" value="2" name="votes[]">PITCHER 2</label>
-					<label for="3"><input type="checkbox" id="3" value="3" name="votes[]">PITCHER 3</label>
-					<label for="4"><input type="checkbox" id="4" value="4" name="votes[]">PITCHER 4</label>
-					<label for="5"><input type="checkbox" id="5" value="5" name="votes[]">PITCHER 5</label>
-					<label for="6"><input type="checkbox" id="6" value="6" name="votes[]">PITCHER 6</label>
-					<label for="7"><input type="checkbox" id="7" value="7" name="votes[]">PITCHER 7</label>
-					<label for="8"><input type="checkbox" id="8" value="8" name="votes[]">PITCHER 8</label>
-					<label for="9"><input type="checkbox" id="9" value="9" name="votes[]">PITCHER 9</label>
-					<label for="10"><input type="checkbox" id="10" value="10" name="votes[]">PITCHER 10</label>
+					<label for="1">
+						<input type="checkbox" id="1" value="1" name="votes[]">PITCHER 1
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="2">
+						<input type="checkbox" id="2" value="2" name="votes[]">PITCHER 2
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="3">
+						<input type="checkbox" id="3" value="3" name="votes[]">PITCHER 3
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="4">
+						<input type="checkbox" id="4" value="4" name="votes[]">PITCHER 4
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="5">
+						<input type="checkbox" id="5" value="5" name="votes[]">PITCHER 5
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="6">
+						<input type="checkbox" id="6" value="6" name="votes[]">PITCHER 6
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="7">
+						<input type="checkbox" id="7" value="7" name="votes[]">PITCHER 7
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="8">
+						<input type="checkbox" id="8" value="8" name="votes[]">PITCHER 8
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="9">
+						<input type="checkbox" id="9" value="9" name="votes[]">PITCHER 9
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
+					<label for="10">
+						<input type="checkbox" id="10" value="10" name="votes[]">PITCHER 10
+						<i class="fa fa-check fa-6 voteCheckmark" aria-hidden="true"></i>
+					</label>
 				</div>
 
 				<input type="text" id="voterUUID" name="voterUUID" value="">
@@ -91,12 +127,67 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
-<script type="text/javascript" src="js/cordova.oauth2.js"></script>
 <script type='application/javascript' src='js/inAppBrowser.js'></script>
 <script>
     $(document).ready(function(){
 		//GET DEVICE UUID
-		$('#voterUUID').val('123e4567-e89b-12d3-a456-426655440000');
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+			$('#voterUUID').val(device.uuid);// AJAX CHECK IF DEVICE HAS VOTED
+			var checkVotes = function(){
+				$.ajax({
+					data: $('#votingForm').serialize(),
+					type: 'POST',
+					url: 'http://c5kj8xbh.c5.suncomet.fi/shift/checkvotes2.php',
+					success: function(response) {
+						var response = JSON.parse(response);
+						var votesGiven = 0;
+
+						//lock form inputs according to given votes already in the DB
+						//horrible individual check of each vote value
+						if(response){
+							if(response.v1 != 0){
+								$('#' + response.v1).addClass('givenVote');
+								votesGiven++;
+							};
+							if(response.v2 != 0){
+								$('#' + response.v2).addClass('givenVote');
+								votesGiven++;
+							};
+							if(response.v3 != 0){
+								$('#' + response.v3).addClass('givenVote');
+								votesGiven++;
+							};
+							if(response.v4 != 0){
+								$('#' + response.v4).addClass('givenVote');
+								votesGiven++;
+							};
+							if(response.v5 != 0){
+								$('#' + response.v5).addClass('givenVote');
+								votesGiven++;
+							};
+							$('.givenVote')
+								.attr('checked', true)
+								.attr('disabled', true)
+								.change()
+								.parent().css({'filter' : 'grayscale(80%) brightness(150%)', 'color' : 'gray'})				.children('.voteCheckmark').addClass('showCheck')
+								.addClass('checkedComponent');
+						}
+
+						//if five votes already given, disable everything and show response
+						if(votesGiven === 5){
+							$('input[type="checkbox"]').each(function(){
+								$(this).attr('disabled', true);
+							});
+							$('input[type="submit"]').attr('disabled', true);
+							$('#response').html('<h1>Thank you!</h1> <h4>You have used all your votes</h4>')
+						};
+					}
+				});
+				return false; // cancel original event to prevent form submitting
+			};
+			checkVotes();
+		};
 
 		//////////////  VOTING FORM  //////////////
 		$( document ).ajaxError(function( event, request, settings ) {
@@ -105,75 +196,6 @@
 		  		.css("opacity", 1)
 				.fadeTo(2500, 0);
 		});
-
-		// AJAX CHECK IF DEVICE HAS VOTED
-		var checkVotes = function(){
-			$.ajax({
-				data: $('#votingForm').serialize(),
-				type: 'POST',
-				url: 'http://c5kj8xbh.c5.suncomet.fi/shift/checkvotes2.php',
-				success: function(response) {
-					var response = JSON.parse(response);
-					var votesGiven = 0;
-
-					//lock form inputs according to given votes already in the DB
-					//horrible individual check of each vote value
-					if(response){
-						if(response.v1 != 0){
-							$('#' + response.v1)
-								.attr('checked', true)
-								.attr('disabled', true)
-								.addClass('givenVote')
-								.change();
-							votesGiven++;
-						};
-						if(response.v2 != 0){
-							$('#' + response.v2)
-								.attr('checked', true)
-								.attr('disabled', true)
-								.addClass('givenVote')
-								.change();
-							votesGiven++;
-						};
-						if(response.v3 != 0){
-							$('#' + response.v3)
-								.attr('checked', true)
-								.attr('disabled', true)
-								.addClass('givenVote')
-								.change();
-							votesGiven++;
-						};
-						if(response.v4 != 0){
-							$('#' + response.v4)
-								.attr('checked', true)
-								.attr('disabled', true)
-								.addClass('givenVote')
-								.change();
-							votesGiven++;
-						};
-						if(response.v5 != 0){
-							$('#' + response.v5)
-								.attr('checked', true)
-								.attr('disabled', true)
-								.addClass('givenVote')
-								.change();
-							votesGiven++;
-						};
-					}
-
-					//if five votes already given, disable everything and show response
-					if(votesGiven === 5){
-						$('input[type="checkbox"]').each(function(){
-							$(this).attr('disabled', true);
-						});
-						$('input[type="submit"]').attr('disabled', true);
-						$('#response').html('<h1>Thank you!</h1> <h4>You have used all your votes</h4>')
-					};
-				}
-			});
-			return false; // cancel original event to prevent form submitting
-		};
-		checkVotes();
 
 		// AJAX - SEND VOTES
 		$('#votingForm').submit(function() { // catch the form's submit event
@@ -202,7 +224,7 @@
 		});
 
 		// show and fadeout response text
-		$('input[type="submit"]').click(function(){
+		$('input[type="submit"]').tapend(function(){
 			$('#response')
 				.stop()
 				.css("opacity", 1)
@@ -214,11 +236,13 @@
 			$('#voteInfo').html(checked + ' votes left');
 		};
 		votesLeft();
-		$('input[type="checkbox"]').change(function(){
-			votesLeft();
-		});
 
 		$('input[type="checkbox"]').change(function(){
+			votesLeft();
+			$(this).parent().toggleClass("checkedComponent");
+
+			//$(this).siblings('.voteCheckmark').toggleClass("showCheck")
+
 			var checked = $('input[type="checkbox"]:checked').length;
 			if(checked < 4){
 				$('input[type="submit"]').attr('disabled', false);
@@ -227,19 +251,20 @@
 					$(this).attr('disabled', false);
 				});
 			} else {
-					$('input[type="checkbox"]:not(:checked):not(.givenVote)').each(function(){
+				$('input[type="checkbox"]:not(:checked):not(.givenVote)').each(function(){
 					$(this).attr('disabled', true);
 				});
 			}
 		});
 
-		$('input[type="checkbox"]').change(function(){
-			$(this).parent().toggleClass("checkedComponent");
-		});
-
 		$('input[type="checkbox"]:checked').each(function(){
 			$(this).parent().toggleClass("checkedComponent");
 		});
+
+		/*$('#votingForm label').on('click, tapend', function(){
+			console.log('moro')
+			$(this).children('input[type="checkbox"]').change();
+		});*/
 
 		//////////////  END VOTING FORM  //////////////
 
@@ -290,83 +315,7 @@
         $('#closeMenu').css('display','block');
     });
 */
-    // SPEAKER INTRO CAROUSEL
-    $("#myCarousel").swiperight(function() {
-        $("#myCarousel").carousel('prev');
-    });
 
-    $("#myCarousel").swipeleft(function() {
-        $("#myCarousel").carousel('next');
-    });
-
-    $(".carousel-caption").tapend(function(){
-        $(this).animate({bottom:'0vh'},200);
-        $(this).find('#arrowUp').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-        $('.closeMenu').css({
-            'display': 'block',
-            'height': '54vh'
-            });
-    });
-
-    $('.closeMenu').on('tapend tapmove', function(){
-        $(".carousel-caption").animate({bottom:'-50vh'},200);
-        $(".carousel-caption").find('#arrowUp').removeClass('fa-chevron-down').addClass('fa-chevron-up');
-        $(this).css({
-            'display': 'none',
-            'height': '100vh'
-        });
-    });
-
-    // USER INFO
-	$('#send').on('tap', function(){
-		localStorage.userName = $('#input').val();
-		introductions();
-	});
-
-	$('#erase').on('tap', function(){
-		localStorage.removeItem('userName');
-	});
-
-	introductions();
-	function introductions (){
-		if(localStorage.userName != undefined){
-			$('#greetings').html('Welcome <strong>' +localStorage.userName +'</strong>!<br><br><a href="">Check out todays awesome <strong>schedule</strong></a>');
-
-		}else{
-			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
-		};
-	};
-
-    // LINKEDIN OAUTH2
-    function oauth2_login() {
-        $.oauth2({
-            auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
-            response_type: 'code',      // required - "code"/"token"
-            token_url: 'https://www.linkedin.com/uas/oauth2/accessToken',          // required if response_type = 'code'
-            client_id: '78p3krb1oky5vx',          // required
-            client_secret: 'ptIkcf2REN9hSiEZ',      // required if response_type = 'code'
-            redirect_uri: 'http://localhost/',       // required - some dummy url
-            other_params: {scope: 'r_basicprofile', state: 'oujeeoujeeoujeea'}        // optional params object for scope, state, display...
-        }, function(token, response){
-            // do something with token or response
-            var authtoken = 'bearer'+token
-            $('#logs').html(token);
-            $.ajax({
-                url: "https://api.linkedin.com/v1/people/~?(:id)format=json?oauth_token="+token,
-                type: "GET",
-                Host: "api.linkedin.com",
-                Connection: "Keep-Alive",
-                Authorization: authtoken,
-                success: function(data) {
-                    $('#logs2').html(data);
-                }
-            });
-        }, function(error, response){
-            // do something with error object
-            $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
-            $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
-        });
-    };
 </script>
 </body>
 </html>

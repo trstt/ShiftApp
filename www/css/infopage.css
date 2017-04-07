@@ -1,4 +1,11 @@
-.tablinkINFO{
+.INFO{
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
+
+.ddINFO{
     width: 39.59vw;
     height: 4vh;
     margin-top: 0;
@@ -13,7 +20,7 @@
     display:inline-block;
 }
 
-.tablinkFAQ{
+.ddFAQ{
     width: 39.59vw;
     height: 4vh;
     background-color: #fec248;
@@ -33,11 +40,42 @@
 }
 
 .tab{
-     background-color: #fec248;
-    text-align: center;
-    margin-bottom: 0;
-    height: 4vh;
+    font-size:3vh;
+    margin-top: 0;
+    width: 49.5vw;
+    height: 6vh;
+    display:inline-block;
+    position:relative;
+    text-align:center;
+    color:black;
+    overflow-y:hidden;
+    line-height: 6vh;
+    font-weight:900;
+
 }
+
+.tab.active {
+    color:#a01e64;
+}
+
+.tabbar{
+    height: 6vh;
+    background-color:white;
+}
+
+.SHDW{
+    width:100vw;
+    height:2vh;
+    background:url(../img/program/shadow.png);
+    background-repeat:no-repeat;
+    background-position:top;
+    background-size:100vw 1.5vh;
+}
+
+.tab.active {
+    color:#a01e64;
+}
+
 .tabcontent {
     margin-top:10vw;
     display:none;
@@ -49,6 +87,11 @@
 .tabcontent p {
     min-width:100%;
     text-align:justify;
+}
+
+#INFO{
+    background-color:white;
+    box-shadow: 0 0px 0.5vh 0 rgba(0, 0, 0, 0.2), 0 0.3vh 0.5vh 0 rgba(0, 0, 0, 0.19);
 }
 
 .tabcontent a {

@@ -267,6 +267,7 @@ input[type="button"], input[type="submit"]{
 .checkedComponent{
 	background-color: #eee;
 	font-weight: 900;
+	background: linear-gradient(to right, #e64696, #ffb411);
 }
 #votingForm{
 	padding-top: 2vh;
@@ -277,7 +278,7 @@ input[type="button"], input[type="submit"]{
 	overflow-y: scroll;
 }
 #votingCompetititors input[type="checkbox"]{
-
+	display: none;
 }
 #votingForm label{
 	width: 98%;
@@ -287,10 +288,29 @@ input[type="button"], input[type="submit"]{
 	padding:0;
 	margin:0.5vw 0;
 	border-bottom: 0.3vh solid #eee;
+		position: relative;
+
 }
 #votingForm label:first-child {
 	margin-top: 0;
 }
 #votingForm label:last-child {
 	margin-bottom: 0;
+}
+.voted{
+	position: absolute;
+	z-index:33;
+}
+.voteCheckmark{
+	display: none;
+	background: transparent;
+	color: #666;
+	position: absolute;
+	left:0;
+	width: 100%;
+	line-height: 9vh;
+	font-size: 4vh;
+}
+.showCheck{
+	display: inline;
 }

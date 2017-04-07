@@ -1,0 +1,245 @@
+#myCarousel{
+	width: 100vw;
+	margin: 0;
+	padding: 0;
+    height: 6vh;
+}
+ol{
+    display: none;
+}
+.carousel-inner {
+    height: 100%;
+}
+
+.tab{
+    margin-top: 0;
+    width: 30vw;
+    height: 6vh;
+    display:inline-block;
+    position:relative;
+    text-align:center;
+    color:black;
+    overflow-y:hidden;
+    line-height: 6vh;
+}
+
+.tab.active {
+    color:#a01e64;
+}
+
+.tabbar{
+    height: 6vh;
+}
+
+.tabcontent{
+    display:none;
+}
+
+.tab img{
+    display:none;
+}
+
+.SHDW{
+    width:100vw;
+    height:2vh;
+    background:url(../img/program/shadow.png);
+    background-repeat:no-repeat;
+    background-position:top;
+    background-size:100vw 1.5vh;
+}
+
+.SPK{
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 5.5vw;
+    align-items:center;
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
+
+.ENT{
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 5.5vw;
+    align-items:center;
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
+
+.WRK{
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 5.5vw;
+    align-items:center;
+}
+
+.RND{
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 5.5vw;
+    align-items:center;
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
+
+.PANEL{
+    line-height:18.75px;
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
+
+.BRD{
+
+}
+
+.MM{
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
+
+.PRE{
+    line-height:18.75px;
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
+
+.KAK{
+
+}
+
+.DEMO{
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+
+}
+
+.SNR{
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
+.active img{
+    display:inline;
+    position:absolute;
+    top:0;
+    left:11vw;
+    width:1.5vw;
+
+}
+
+.gridbtn{
+     width:100vw;
+    height:15vh;
+    margin-top:0;
+    margin-bottom:1vh;
+    text-align: center;
+    font-size: 5vw;
+    padding-top: 0.9vw;
+    font-family: Gilroy-Light;
+    padding: 0;
+    display:inline-block;
+    line-height:15vh;
+    box-shadow: 0 0px 0.5vh 0 rgba(0, 0, 0, 0.2), 0 0.3vh 0.5vh 0 rgba(0, 0, 0, 0.19);
+}
+
+.gridbtn p{
+    font-size: 7vw;
+    color:white;
+    word-break: break-all;
+    text-transform: uppercase;
+    font-weight:bold;
+}
+
+.bSPK{
+    background:url(../img/program/speakers.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bENT{
+    background:url(../img/program/entertainment.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bWRK{
+    background:url(../img/program/workshops.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bRND{
+    background-image:url(../img/program/boardroom.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
+}
+
+.bPANEL{
+    background-image:url(../img/program/panel_discussion.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bBRD{
+    background-image:url(../img/program/boardroom.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bMM{
+    background-image:url(../img/program/matchmaking.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bPRE{
+    background-image:url(../img/program/entertainment.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bKAK{
+    background-image:url(../img/program/kakola.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bDEMO{
+    background-image:url(../img/program/speakers.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.bSNR{
+    background-image:url(../img/program/kakola.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin-bottom:0;
+}

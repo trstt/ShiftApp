@@ -1,0 +1,35 @@
+.tab{
+    margin-top: 0;
+    width: 49vw;
+    height: 6vh;
+    display:inline-block;
+    position:relative;
+    text-align:center;
+    color:black;
+    overflow-y:hidden;
+    line-height: 6vh;
+}
+
+.tab.active {
+    color:#a01e64;
+}
+
+.tabbar{
+    height: 6vh;
+}
+
+.SHDW{
+    width:100vw;
+    height:2vh;
+    background:url(../img/program/shadow.png);
+    background-repeat:no-repeat;
+    background-position:top;
+    background-size:100vw 1.5vh;
+}
+
+.pitch{
+    border-right:1px;
+    border-color:grey;
+    border-right-width:1px;
+    border-right-style:solid;
+}
