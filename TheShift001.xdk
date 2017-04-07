@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "673c32bb-099a-4f9f-b9ef-81309661e8be",
-      "lastModifiedDate": 1491551714071,
+      "lastModifiedDate": 1491553351748,
       "creationDate": 1484894669153
     },
     "XDK-app-designer": "false",
@@ -89,7 +89,8 @@
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "21",
           "android-installLocation": "auto",
-          "android-signed": true
+          "android-signed": true,
+          "Orientation": "portrait"
         },
         "isActive_": true,
         "certificateId_": "dyUcASFD7EKU-ccxf6Ltog2",
@@ -154,7 +155,8 @@
         "name_": "iOS",
         "preferences_": {
           "ios-configuration": "adhoc",
-          "deployment-target": "8.0"
+          "deployment-target": "8.0",
+          "Orientation": "portrait"
         },
         "isActive_": true,
         "certificateId_": "",
