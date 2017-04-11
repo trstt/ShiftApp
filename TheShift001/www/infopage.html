@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>The  Shift 2017 Official App</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/shift-styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/infopage.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div id="menu">
+        <div id="logomenu">
+            <img class="logo" src="img/Shift_Color.png">
+        </div>
+        <ul>
+            <li>
+                <a href="index.html">
+					<img class="linkicon" src="img/menuicons/menu.png">
+                    Main
+                </a>
+            </li>
+            <li>
+                <a href="map.html">
+					<img class="linkicon" src="img/menuicons/map.png">
+                    Map
+                </a>
+            </li>
+            <li>
+                <a href="program2.html">
+					<img class="linkicon" src="img/menuicons/prog.png">
+                    Program
+                </a>
+            </li>
+            <li>
+				<a href="schedule.html">
+					<img class="linkicon" src="img/menuicons/time.png">
+                	Time table
+				</a>
+            </li>
+			<li>
+				<a href="voting.html">
+                    <img class="linkicon" src="img/menuicons/pitch.png">
+                	Pitch competition
+				</a>
+            </li>
+            <li>
+                <a href="matchma.html">
+					<img class="linkicon" src="img/menuicons/brella.png">
+                    Matchmaking
+                </a>
+            </li>
+            <li>
+				<a href="infopage.html">
+					<img class="linkicon" src="img/menuicons/info.png">
+					Info
+				</a>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <!--<div class="swipeOpenMenu" id="swipeOpenMenu"></div>-->
+        <div class="closeMenu" id="closeMenu"></div>
+        <nav class="navbar navbar-default">
+            <a id="openMenu" class="navbar-brand" href="#">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </a>
+        </nav>
+
+        <div class="container">
+        <div class="tabbar">
+
+        <div class ="tab INFO" onclick="openTab(event, 'INFO')">INFO</div>
+        <div class ="tab FAQ" onclick="openTab(event, 'FAQ')">FAQ</div>
+                </div>
+                <div class = "SHDW"></div>
+            <div id="FAQ" class="tabcontent">
+             <h1>Frequently asked questions</h1>
+            <div class="vivid-simple-accordion" id="vivid-simple-accordion-8129">
+        <div class="simple-accordion-group closed">
+        <div class="simple-accordion-title-shell">
+            <h2 class="panel-title">Is this a day event?</h2>        </div>
+        <div class="simple-accordion-description">
+            <p>Yes. The event schedule starts at 10am and finishes at 17pm on both event days.</p>        </div>
+    </div>
+        <div class="simple-accordion-group closed">
+        <div class="simple-accordion-title-shell">
+            <h2 class="panel-title">How to get to the SHIFT</h2>        </div>
+        <div class="simple-accordion-description">
+            <h4>Reaching Turku</h4><p>Turku is a transportation hub hosting both an airport and a harbour. You can also reach the city by a train, a bus or a car.</p><h4>By Air</h4><p>You may reach Turku by air. Please visit the below web site for more information.</p><a href="http://www.finavia.fi/en/turku/" target="_system">http://www.finavia.fi/en/turku/</a><h4>Train</h4><p>You can reach Turku by a train from Helsinki or Tampere. Please consult the below website for timetables and tickets.</p><a href="http://www.vr.fi/" target="_system">www.vr.fi/</a><h4>Ferry</h4><p>There are ferry connections to Turku from Stockholm.</p><p>Please consult the below websites for timetables and tickets.</p><a href="http://www.siljaline.fi" target="_system">www.siljaline.fi</a><h4>Bus</h4><p>Please consult the below websites for timetables and tickets.</p><a href="http://www.matkahuolto.fi" target="_system">www.matkahuolto.fi</a><a href="http://www.onnibus.fi">www.onnibus.fi</a>        </div>
+    </div>
+        <div class="simple-accordion-group closed">
+        <div class="simple-accordion-title-shell">
+            <h2 class="panel-title">About Turku</h2>        </div>
+        <div class="simple-accordion-description">
+            <p>Turku is the oldest city in Finland and boasts a rich historical and cultural heritage. It is home to the oldest school as well as the oldest theatre in Finland.The SHIFT is continuing this tradition of trailblazing by gathering some of the sharpest minds in the world to actively shape our global future heritage.  Located at the south-western coast of Finland it is a gateway to one of the most beautiful archipelagos in the world.</p><p>The event venue is the Turku Castle dating back to the 1300th century. At this truly unique venue you can hear the wings of history, while making history as part of the SHIFT.  </p>        </div>
+    </div>
+        <div class="simple-accordion-group closed">
+        <div class="simple-accordion-title-shell">
+            <h2 class="panel-title">Where to stay in Turku</h2>        </div>
+        <div class="simple-accordion-description">
+            <p>There are plenty of hotels in and around Turku, but we recommend that you check out our partners.</p><span id="docs-internal-guid-4ecf294a-1464-776a-927c-d8a595fd32b5"><a href="https://www.cumulus.fi/en" target="_system">https://www.cumulus.fi/en</a></span><p></p><a href="https://www.sokoshotels.fi/en" target="_system">https://www.sokoshotels.fi/en</a>        </div>
+    </div>
+        <div class="simple-accordion-group closed">
+        <div class="simple-accordion-title-shell">
+            <h2 class="panel-title">Is this a tech event?</h2>        </div>
+        <div class="simple-accordion-description">
+            <p><span id="docs-internal-guid-e9b0f153-099d-3a44-2595-11aecffcafe2"></span></p><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;" rel="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">We certainly are not an event only for the tech geeks drooling over the latest gadget. Having said that, we do acknowledge that technology is a driver of change in the fields of health, learning, and energy. We are about tech empowering humans, not the other way around.</p><p>So your answer is yes and no. </p>        </div>
+    </div>
+        <div class="simple-accordion-group closed">
+        <div class="simple-accordion-title-shell">
+            <h2 class="panel-title">Is this an event for me?</h2>        </div>
+        <div class="simple-accordion-description">
+            <span id="docs-internal-guid-e9b0f153-099d-b261-56ad-382480bd9e1a"><p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;">It is crucial for any individual or company to stay relevant. The SHIFT is for pioneers and thought leaders in the fields of health, learning, and energy. So, if you work in those fields, it is pivotal to join The SHIFT, and learn about the latest trends and developments.</p></span><p>Plus we have food. And circus. And music. Comprende? </p>        </div>
+    </div>
+    </div>
+                </div>
+       <div id="INFO" class="tabcontent">
+           <h1>The SHIFT 2017</h1>
+           <p>SHIFT is a business festival where every participant is crucial for making SHIFT happen. At SHIFT you can participate in round-table discussions, one-on-one meetings, and workshops, as well as listen to keynotes and panel discussions. SHIFT will take place at the Castle of Turku on the 31st of May and the 1st of June 2017.
+               Behind SHIFT Business Festival is a non-profit organization Shift Ry, registered in Turku, Finland. Our team of active citizens consists of mainly young professionals, entrepreneurs and students. We are motivated not by money, but by making a positive impact to our society. That is why we SHIFTers, work pro-bono to create a better future.
+               SHIFT is backed by companies and the city of Turku, as well as Turku Chamber of Commerce and The Federation of Finnish Enterprises, while the event itself is put together by local JCI members, start-up actives and students.</p>
+           </div>
+
+
+        </div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/accordion.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mobile-events.min.js"></script>
+<script src="js/tab.js"></script>
+<script type="text/javascript" src="js/cordova.oauth2.js"></script>
+<script>
+
+
+    $(".tab").on("tap", function() {
+
+        $('.tab').removeClass('active');
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active');
+        }
+    });
+
+
+    $(document).ready(function(){
+            openTab(event, 'INFO');
+        function qs(key) {
+            key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+            var match = location.search.match(new RegExp("[?&]" + key + "=([^&]+)(&|$)"));
+            var slide = match && decodeURIComponent(match[1].replace(/\+/g, " "));
+            if (Math.floor(slide) == slide && $.isNumeric(slide))
+                return parseInt(slide);
+            else
+                return 0;
+        }
+        $('#myCarousel').carousel(qs('slide'));
+    });
+    // SIDE MENU
+
+    $('#openMenu').tapend(function(){
+        $('.wrapper').animate(
+			{left: '0'},
+			200,
+			"linear"
+		);
+        $('#closeMenu').css('display','block');
+    }).stop(true);
+	$('#swipeOpenMenu').tapmove(function(){
+        $('.wrapper').animate(
+			{left: '0'},
+			200,
+			"swing"
+		);
+        $('#closeMenu').css('display','block');
+    }).stop(true);
+
+    $('.closeMenu').on('tapend tapmove', function(){
+        $('.wrapper').animate(
+			{
+				left: '-80vw',
+			},
+			100,
+			"swing"
+		);
+        $(this).css('display', 'none');
+    }).stop(true);
+
+/*  // MENU SWIPE FROM LEFT
+    $('#content').swiperight(function(){
+        $('.wrapper').animate({left:'0px'});
+        $('#closeMenu').css('display','block');
+    });
+*/
+    // SPEAKER INTRO CAROUSEL
+    $("#myCarousel").swiperight(function() {
+        $("#myCarousel").carousel('prev');
+    });
+
+    $("#myCarousel").swipeleft(function() {
+        $("#myCarousel").carousel('next');
+    });
+
+    $(".carousel-caption").tapend(function(){
+        $(this).animate({bottom:'0vh'},200);
+        $(this).find('#arrowUp').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        $('.closeMenu').css({
+            'display': 'block',
+            'height': '54vh'
+            });
+    });
+
+    $('.closeMenu').on('tapend tapmove', function(){
+        $(".carousel-caption").animate({bottom:'-50vh'},200);
+        $(".carousel-caption").find('#arrowUp').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        $(this).css({
+            'display': 'none',
+            'height': '100vh'
+        });
+    });
+
+    // USER INFO
+	$('#send').on('tap', function(){
+		localStorage.userName = $('#input').val();
+		introductions();
+	});
+
+	$('#erase').on('tap', function(){
+		localStorage.removeItem('userName');
+	});
+
+	introductions();
+	function introductions (){
+		if(localStorage.userName != undefined){
+			$('#greetings').html('Welcome <strong>' +localStorage.userName +'</strong>!<br><br><a href="">Check out todays awesome <strong>schedule</strong></a>');
+
+		}else{
+			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
+		};
+	};
+
+    // LINKEDIN OAUTH2
+    function oauth2_login() {
+        $.oauth2({
+            auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
+            response_type: 'code',      // required - "code"/"token"
+            token_url: 'https://www.linkedin.com/uas/oauth2/accessToken',          // required if response_type = 'code'
+            client_id: '78p3krb1oky5vx',          // required
+            client_secret: 'ptIkcf2REN9hSiEZ',      // required if response_type = 'code'
+            redirect_uri: 'http://localhost/',       // required - some dummy url
+            other_params: {scope: 'r_basicprofile', state: 'oujeeoujeeoujeea'}        // optional params object for scope, state, display...
+        }, function(token, response){
+            // do something with token or response
+            var authtoken = 'bearer'+token
+            $('#logs').html(token);
+            $.ajax({
+                url: "https://api.linkedin.com/v1/people/~?(:id)format=json?oauth_token="+token,
+                type: "GET",
+                Host: "api.linkedin.com",
+                Connection: "Keep-Alive",
+                Authorization: authtoken,
+                success: function(data) {
+                    $('#logs2').html(data);
+                }
+            });
+        }, function(error, response){
+            // do something with error object
+            $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
+            $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
+        });
+    };
+</script>
+
+</body>
+</html>

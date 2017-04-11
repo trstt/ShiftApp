@@ -1,0 +1,329 @@
+@font-face {
+  font-family: 'GlacialIndifference';
+  src: url('../fonts/GlacialIndifference-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Gilroy-Light';
+  src: url('../fonts/Gilroy-Light.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Gilroy-ExtraBold';
+  src: url('../fonts/Gilroy-ExtraBold.otf') format('opentype');
+}
+
+html,
+body {
+    font-family: 'GlacialIndifference', Fallback, sans-serif;
+    min-height: 100vh;
+    min-width: 100%;
+    overflow: hidden;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gilroy-Light', Fallback, sans-serif;
+    font-size: 6vw;
+	color: #370c2c;
+	margin: 0.5vh 0;
+}
+.h1, .h2, h1, h2{
+    font-family: 'Gilroy-ExtraBold', Fallback, sans-serif;
+    font-size: 7vw;
+}
+.h5, h5 {
+	font-size: 4.5vw;
+}
+#paragraph p{
+	text-align: justify;
+	margin: 3vh 4vw;
+}
+.p, .span, .input, p, span, input, div {
+    font-family: 'GlacialIndifference', Fallback, sans-serif;
+    font-size: 3.5vw;
+    font-weight: 500;
+	color: #370c2c;
+}
+input, a{
+	outline: 0;
+	text-decoration: none;
+}
+a:hover, a:active, a:focus {
+  	text-decoration: none;
+}
+::-webkit-scrollbar {
+    width: 0.8vw;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 0.5vw;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+/*navigation bar*/
+.navbar {
+	position: absolute;
+	top:0;
+    background: #e64696;
+    border-radius: 0;
+    border:0;
+    height: 9vh;
+    min-height: 40px;
+    width: 100vw;
+	z-index: 2;
+	/*box-shadow: 0px 8px 20px #ccc;*/
+}
+.navbar a{
+    height: 100%;
+    margin:0;
+    padding: 0;
+    text-align: center
+}
+
+.navbar i{
+    padding: auto;
+    font-size: 5.5vw;
+    line-height:9vh;
+    width: 10vw;
+    color: #f7f7f8;
+}
+#linna:hover{
+    fill: #e64696;
+}
+#Layer_1:hover{
+    /*transform: scale(1.5);*/
+    fill: #f1486f;
+    border: 1px solid #f1486f;
+}
+.wrapper{
+    position:absolute;
+    z-index:3;
+    left: -80vw;
+    height: 100vh;
+    width: 100vw;
+}
+#content{
+	/*background: url(../img/purple-haze2.jpg);
+	background-size: cover;
+	background-position: top center;*/
+	position: absolute;
+	top:0;
+	left: 80vw;
+    width: 100vw;
+    min-height: 100vh;
+    margin:0;
+    padding:0;
+	overflow: hidden;
+}
+.container{
+	position: absolute;
+	text-align: center;
+	width: 100vw;
+	height: 91vh;
+	top: 0;
+	padding: 0;
+	margin-top: 9vh;
+	overflow-y: overlay;
+	overflow-x: hidden;
+	z-index:1;
+}
+.introduction{
+	padding-top: 1.4vh;
+	background: url('../img/purple-haze.jpeg') center center no-repeat;
+	background-size: cover;
+	border-bottom: 1px solid #e64696;
+}
+#clockdiv{
+	height: 8vh;
+}
+.time{
+	min-width: 13vw;
+	display: inline-block;
+	margin-bottom: -100vh;
+	font-size: 4vh;
+}
+.timetextwrap{
+	position: absolute;
+	top: 3.8vh;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+.timetext{
+	width: 13vw;
+	display: inline-block;
+	font-size: 2.2vh;
+}
+.logo {
+	width: 49.5vw;
+}
+.divider{
+	width: 60vw;
+}
+input[type="button"], input[type="submit"]{
+	padding: 0.5vh;
+	min-width: 50vw;
+	margin: 4vh auto;
+	background-color: #e64696;
+	font-family: 'Gilroy-ExtraBold', Fallback, sans-serif;
+	letter-spacing: 0.5vw;
+    font-size: 4vw;
+	border: 0;
+	color: #fff;
+}
+#paragraph{
+	height: 26.4vh;
+	padding-top: 1.8vh;
+}
+#paragraph h4{
+	font-size: 4vw;
+	text-align: left;
+	margin-left: 4vw;
+}
+#paragraph p{
+	margin-top: 0;
+}
+
+.shortcut{
+	background: linear-gradient(to right, #e64696, #ffb411);
+	height: 10vh;
+}
+.shortcut a{
+	margin: 0;
+	display: inline-block;
+	min-height: 10vh;
+	min-width: 33vw;
+}
+.shortcut a:first-child{
+	border-right: 0.2vw solid rgba(255, 255, 255, 0.3);
+}
+.shortcut a:last-child{
+	border-left: 0.2vw solid rgba(255, 255, 255, 0.3);
+}
+.shortcut input{
+	margin: 0;
+	min-height: 10vh;
+	min-width: 30vw;
+	font-family: 'Gilroy-Light', Fallback, sans-serif;
+	background: transparent;
+}
+.newsletter{
+	padding: 0;
+	background-color: #370c2c;
+	height: 7.5vh;
+}
+.newsletter input{
+	margin: 0;
+	height: 100%;
+	line-height: 7.2vh;
+	min-width: 30vw;
+	background: transparent;
+	display: inline-block;
+}
+#menu{
+    text-align: left;
+    z-index: 4;
+    min-height: 100vh;
+    width: 80vw;
+    background-color: #3d3d3c;
+    color: #fff;
+}
+#menu ul{
+    padding: 8vh 0 0 12vh;
+}
+#menu ul li{
+    display: block;
+    margin: 0 auto;
+    height: 10vh;
+    width: 100%;
+}
+#menu ul li i{
+    font-size: 4.5vh;
+	line-height: 9vh;
+    color: #fff;
+    display: block;
+}
+#closeMenu {
+    display:none;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+	z-index: 999;
+}
+.checkedComponent{
+	background-color: #eee;
+	font-weight: 900;
+	background: linear-gradient(to right, #e64696, #ffb411);
+}
+#votingForm{
+	padding-top: 2vh;
+}
+#votingCompetititors{
+	height:50vh;
+	width:99vw;
+	overflow-y: scroll;
+}
+#votingCompetititors input[type="checkbox"]{
+	display: none;
+}
+#votingForm label{
+	width: 98%;
+	height: 9vh;
+	font-size: 3vh;
+	line-height: 8.5vh;
+	padding:0;
+	margin:0.5vw 0;
+	border-bottom: 0.3vh solid #eee;
+		position: relative;
+
+}
+#votingForm label:first-child {
+	margin-top: 0;
+}
+#votingForm label:last-child {
+	margin-bottom: 0;
+}
+.voted{
+	position: absolute;
+	z-index:33;
+}
+.voteCheckmark{
+	display: none;
+	background: transparent;
+	color: #666;
+	position: absolute;
+	left:0;
+	width: 100%;
+	line-height: 9vh;
+	font-size: 4vh;
+}
+.showCheck{
+	display: inline;
+}
+#menu a{
+    color:aliceblue;
+	font-family: 'GlacialIndifference', Fallback, sans-serif;
+    font-size: 3.3vh;
+}
+#logomenu{
+    width:100%;
+    text-align: center;
+    padding-top: 9vh;
+}
+#menu .logo{
+    width: 55%;
+    margin 0 auto 0 auto;
+}
+#menu .linkicon{
+    display: inline-block;
+    width: 25%;
+    margin 0;
+}
+#menu .linkicon{
+    display: inline-block;
+    width: 5.5vh;
+    margin 0;
+    padding-right: 3.8vw;
+    vertical-align: text-top;
+}

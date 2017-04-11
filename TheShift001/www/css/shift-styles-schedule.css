@@ -1,0 +1,382 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.scheBody {
+    height: 91vh;
+}
+
+/*choosing date*/
+.date
+{
+    background-color: #ffffff;
+    text-align: center;
+    margin-bottom: 0;
+    height: 6vh;
+}
+
+.date div{
+    display: inline-block;
+    padding-top: 0;
+    margin-top: 0;
+    height: 4vh;
+}
+
+
+.day {
+    width: 39.59vw;
+    height: 4vh;
+    background-color: #fec248;
+    margin-top: 0;
+    text-align: center;
+    font-size: 3vw;
+    padding-top: 0.9vw;
+    font-family: Gilroy-Light;
+    color: rgb(74,56,16);
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.date p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tues {
+    background-color: rgb(250,230,149);
+}
+/*end of choosing date*/
+
+/*content*/
+
+.padding {
+    padding: 0;
+}
+
+.schedule {
+    width: 100%;
+    overflow: auto;
+    height: 87vh;
+    white-space: nowrap;
+    padding: 0;
+    overflow-y: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.time {
+    height: 3vh;
+    font-size: 0;
+    margin-left: 12vw;
+}
+
+
+.time p {
+    display: inline-block;
+    width: 30vw;
+    font-family: Gilroy-Light;
+    font-size: 2.5vh;
+    height: 3vh;
+    margin-bottom: 0;
+    margin-top:0;
+    text-align: left;
+}
+
+.info {
+    display:flex;
+    flex-direction: column;
+    width: 890vw;
+    height: 81.4vh;
+    border-bottom: 0.1vh solid #838383;
+}
+
+.child {
+    width: 100%;
+    height: 16.3vh;
+}
+
+
+.area {
+    float: left;
+    width: 17.5vw;
+    padding: 0;
+    margin: 0;
+    height: 16.3vh;
+    z-index: 4;
+}
+
+
+
+
+.area h5 {
+    margin-top: 0;
+    font-family: Gilroy-Light;
+    color: #fff;
+    text-align: center;
+    font-size: 4vw;
+    margin-top: 4vh;
+    margin-bottom: 0;
+    margin-right: 0;
+    line-height: 4vh;
+}
+
+.box {
+    height: 16.3vh;
+    position: relative;
+    background-color: #ebebeb;
+    margin-left: 0;
+    box-sizing: border-box;
+    width: 45vw;
+    border-bottom: 0.1vh solid #838383;
+    border-right: 0.1vh solid #ffffff;
+}
+
+
+
+
+.child {
+    font-size : 0;
+}
+
+.main-stage .box {
+    display: inline-block;
+    padding: 0;
+}
+
+.park .box {
+    display: inline-block;
+    padding: 0;
+}
+
+.summerstage .box {
+    display: inline-block;
+    padding: 0;
+}
+
+.lordscellar .box {
+    display: inline-block;
+    padding: 0;
+}
+
+.workshop .box {
+    display: inline-block;
+    padding: 0;
+}
+
+.tick {
+    background-color: #fec248;
+    margin-bottom: 0;
+    height: 3vh;
+}
+
+.tick i {
+    float: right;
+    font-size: 3.5vw;
+    color: #fff;
+    padding: 0.2vw;
+    margin-top: 0.6vh;
+}
+
+.detail {
+    height: 13.8vh;
+    background-color: #fedf9f;
+    display: inline;
+}
+
+
+.etime {
+    line-height: 3vh;
+    font-family: Gilroy-Light;
+    font-size: 4vw;
+    position: absolute;
+    margin-left: 1vw;
+    text-align: left;
+    margin-top: 4.2vh;
+}
+
+.title {
+    font-family: Gilroy-ExtraBold;
+    font-size: 4.2vw;
+    margin-left: 1vw;
+    text-transform: uppercase;
+    position: absolute;
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 2.2vh;
+    margin-top: 7.5vh;
+}
+
+.desc {
+    font-family: Gilroy-ExtraBold;
+    font-size: 3vw;
+    position: absolute;
+    margin-left: 1vw;
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 2.2vh;
+    margin-top: 10vh;
+}
+
+.six {
+    width: 180vw;
+}
+
+.five {
+    width: 150vw;
+}
+
+.four {
+    width: 120vw;
+}
+
+.three {
+    width: 90vw;
+}
+
+.two {
+    width: 60vw;
+}
+
+.one {
+    width: 30vw;
+}
+
+.n-0 {
+    margin-right: 0;
+}
+
+.n-1 {
+    margin-right: 30vw;
+}
+
+.n-2 {
+    margin-right: 60vw;
+}
+
+.n-3 {
+    margin-right: 90vw;
+}
+
+.n-8 {
+    margin-right: 240vw;
+}
+
+.s-0 {
+    margin-left: 17vw;
+}
+
+.s-1 {
+    margin-left: 47vw;
+}
+
+.s-2 {
+    margin-left: 77vw;
+}
+
+.s-3 {
+    margin-left: 107vw;
+}
+
+.s-4 {
+    margin-left: 137vw;
+    }
+
+.performance {
+    background-color: #ff4747;
+}
+
+.keynote {
+    background-color: #ffbf5b;
+}
+
+.roundTable {
+    background-color: #e64695;
+}
+
+.boardRoomChallenge {
+    background-color: #9759b7;
+}
+
+.pitchingCompetition {
+    background-color: #57e2ff;
+}
+
+.panel {
+    background-color: #1aeab2;
+}
+
+.wshop {
+    background-color: #62c736;
+}
+
+
+.main-stage, .park, .summerstage, .roundTable, .lordscellar, .summerstage, .workshop {
+    border-bottom: 0.1vh solid #838383;
+
+}
+
+.verticalLine {
+    width: 1.5vw;
+    border-right: 0.5vw dashed #000000;
+    position:absolute;
+    top:3.3vh;
+    display: none;
+    bottom:0;
+    z-index: 4;
+    opacity: 0.2;
+}
+
+.child p {
+    margin-left: 5vw;
+}
+
+.floatStage {
+    width: 18vw;
+    position: absolute;
+    z-index: 15;
+    margin-top: 3.5vh;
+    background-color: #e74696;
+}
+.tab{
+    font-size:3vh;
+    margin-top: 0;
+    width: 49.5vw;
+    height: 6vh;
+    display:inline-block;
+    position:relative;
+    text-align:center;
+    color:black;
+    overflow-y:hidden;
+    line-height: 6vh;
+    font-weight:900;
+
+}
+
+.tab.active {
+    color:#a01e64;
+}
+
+.tabbar{
+    height: 6vh;
+    background-color:white;
+}
+
+.SHDW{
+    width:100vw;
+    height:2vh;
+    background:url(../img/program/shadow.png);
+    background-repeat:no-repeat;
+    background-position:top;
+    background-size:100vw 1.5vh;
+}
