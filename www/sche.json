@@ -1,0 +1,422 @@
+{
+    "wed":
+    {
+        "tent" :
+        [
+            {
+                "startin": "s-1",
+                "time": "10.15–10.45",
+                "title": "OPENING SHOW",
+                "description": "",
+                "category": "performance",
+                "duration": "two",
+                "nextin": "n-0"
+            },
+            {
+                "time": "10.45 – 11.30",
+                "title": "Henrik Hauptop Lund, Uni Denmark",
+                "description": "Uni Denmark ",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-2"
+
+            },
+            {
+                "time": "12.00 – 12.45",
+                "title": "Cecilia Tham",
+                "description": "MOB ",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-2"
+            },
+            {
+                "time": "13.15–14.00",
+                "title": "Christoph Auer-Welsbach",
+                "description": "IBM",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-2"
+            },
+            {
+                "time": "14.30–15.15",
+                "title": "Lauri Järvilehto",
+                "description": "Lightneer",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-2"
+            },
+            {
+                "time": "15.45–16.30",
+                "title": "Alan Laubsch",
+                "description": "Natural Capital Market",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-1"
+            },
+            {
+                "time": "16.45-17.00",
+                "title": "Show",
+                "description": "Wonderful night",
+                "category": "performance",
+                "duration": "one",
+                "nextin": "n-0"
+            }
+
+        ],
+        "park":
+        [
+            {
+                "startin": "s-4",
+                "time": "11.00–12.30",
+                "title": "Round table",
+                "description": "TBA",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "13.00–14.30",
+                "title": "Round table",
+                "description": "TBA",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "15.00–16.30",
+                "title": "ROUND TABLE",
+                "description": "Light entrepreneurship, Ukko",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-0"
+            }
+
+
+        ],
+
+        "bryggman":
+        [
+            {
+                "startin": "s-1",
+                "time": "10.15–11.00",
+                "title": "Boardroom Challenge",
+                "description": "",
+                "category": "boardRoomChallenge",
+                "duration": "three",
+                "nextin": "n-1"
+            },
+            {
+                "time": "11.15 - 12.15",
+                "title": "Pitching",
+                "description": "",
+                "category": "pitchingCompetition",
+                "duration": "four",
+                "nextin": "n-1"
+            },
+            {
+                "time": "12.30 - 13.15",
+                "title": "Boardroom Challenge",
+                "description": "",
+                "category": "boardRoomChallege",
+                "duration": "three",
+                "nextin": "n-2"
+            },
+            {
+                "time": "13.45 - 14.30",
+                "title": "Pitching",
+                "description": "",
+                "category": "pitchingCompetition",
+                "duration": "three",
+                "nextin": "n-0"
+            },
+            {
+                "time": "14.30–15.45",
+                "title": "Panel: Learning",
+                "description": "",
+                "category": "panel",
+                "duration": "five",
+                "nextin": "n-1"
+            },
+            {
+                "time": "16.00-17.00",
+                "title": "Pitching",
+                "description": "",
+                "category": "pitchingCompetition",
+                "duration": "four",
+                "nextin": "n-0"
+            }
+
+        ],
+
+
+        "kingsHall":
+        [
+            {
+                "startin": "s-4",
+                "time": "11.00 - 12.30",
+                "title": "Round table",
+                "description": "Artificial Intelligence, Christoph Auer-Welsbach, IBM",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "13.00 - 14.30",
+                "title": "Round table",
+                "description": "TBA",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "15.00 - 16.30",
+                "title": "Round table",
+                "description": "Leadership in the future, Turku University",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-0"
+            }
+
+        ],
+
+
+        "werstas":
+        [
+            {
+                "startin": "s-3",
+                "time": "10.45–11.15",
+                "title": "Workshop",
+                "description": "TBA",
+                "category": "workshop",
+                "duration": "two",
+                "nextin": "n-1"
+            },
+            {
+                "time": "11.30 - 13.00",
+                "title": "Workshop",
+                "description": "Mentalmodel game, Monkey Business",
+                "category": "workshop",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "13.30–15.00",
+                "title": "Round table",
+                "description": "TBA",
+                "category": "workshop",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "15.30–17.00",
+                "title": "Workshop",
+                "description": "Visualization of strategy, Salla Lehtipuu",
+                "category": "workshop",
+                "duration": "six",
+                "nextin": "n-0"
+            }
+
+        ]
+    },
+
+
+    "thu":
+    {
+
+        "tent":
+        [
+            {   "startin": "s-0",
+                "time": "10.00 – 10.45",
+                "title": "Neil Harbisson",
+                "description": "The Cyborg Foundation",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-1"
+            },
+            {
+                "time": "11.00 – 11.45",
+                "title": "Melody Hossaini",
+                "description": "Inspire Engage",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-2"
+            },
+            {
+                "time": "12.15 – 13.00",
+                "title": "TBA",
+                "description": "Paulig",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-1"
+            },
+            {
+                "time": "13.15 – 14.00",
+                "title": "Hugh Williams",
+                "description": "Google Maps",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-3"
+            },
+            {
+                "time": "14.45 – 15.00",
+                "title": "Gerd Leonhard",
+                "description": "Future agency",
+                "category": "keynote",
+                "duration": "three",
+                "nextin": "n-2"
+            },
+            {
+                "time": "15.30 – 16.45",
+                "title": "Pitch Final",
+                "description": "",
+                "category": "pitchingCompetition",
+                "duration": "three",
+                "nextin": "n-0"
+            },
+            {
+                "time": "16.45 – 17.00",
+                "title": "Farewell Show",
+                "description": "",
+                "category": "performance",
+                "duration": "one",
+                "nextin": "n-0"
+            }
+        ],
+
+
+        "park":
+        [
+            {   "startin": "s-0",
+                "time": "10.00 – 11.30",
+                "title": "Round table",
+                "description": "TBA",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "12.00 – 13.30",
+                "title": "Round table",
+                "description": "TBA, Melody Hossaini",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "14.00 – 15.30",
+                "title": "Round table",
+                "description": "TBA",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-0"
+            }
+
+        ],
+
+
+        "bryggman":
+        [
+            {
+                "startin": "s-1",
+                "time": "10.15 - 11.00",
+                "title": "Boardroom Challenge",
+                "description": "",
+                "category": "boardRoomChallege",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "11.30 - 12.30",
+                "title": "Panel: Health",
+                "description": "",
+                "category": "panel",
+                "duration": "four",
+                "nextin": "n-2"
+            },
+            {
+                "time": "13.00 - 13.45",
+                "title": "Boardroom Chgallenge",
+                "description": "",
+                "category": "boardRoomChallege",
+                "duration": "four",
+                "nextin": "n-1"
+            },
+            {
+                "time": "14.00 - 15.00",
+                "title": "Panel: Energy",
+                "description": "",
+                "category": "panel",
+                "duration": "four",
+                "nextin": "n-0"
+            }
+
+        ],
+        "kingsHall":
+        [
+            {
+                "startin": "s-0",
+                "time": "10.00 - 11.30",
+                "title": "Round table",
+                "description": "Design Thinking, Uuden Muotoilun Yhdistys",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "12.00 - 13.30",
+                "title": "Round table",
+                "description": "TBA, Greg Leonhard",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "14.00 - 15.30",
+                "title": "TBA, Melody Hossaini",
+                "description": "",
+                "category": "roundTable",
+                "duration": "six",
+                "nextin": "n-0"
+            }
+
+        ],
+        "werstas":
+        [
+            {
+                "startin": "s-0",
+                "time": "10.00 – 11.30",
+                "title": "Workshop",
+                "description": "TBA, Turku University - Finland Futures Academy",
+                "category": "workshop",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "12.00 - 13.30",
+                "title": "Workshop",
+                "description": "TBA",
+                "category": "workshop",
+                "duration": "six",
+                "nextin": "n-2"
+            },
+            {
+                "time": "14.00 – 15.30",
+                "title": "Workshop",
+                "description": "TBA",
+                "description": "TBA",
+                "category": "workshop",
+                "duration": "six",
+                "nextin": "n-1"
+            },
+            {
+                "time": "15.45 – 16.45",
+                "title": "Workshop",
+                "description": "TBA",
+                "category": "workshop",
+                "duration": "four",
+                "nextin": "n-0"
+            }
+
+        ]
+    }
+}
