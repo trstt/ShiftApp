@@ -15,6 +15,7 @@ body {
 
 .scheBody {
     height: 91vh;
+	overflow-y: none;
 }
 
 /*choosing date*/
@@ -117,10 +118,6 @@ body {
     height: 16.3vh;
     z-index: 4;
 }
-
-
-
-
 .area h5 {
     margin-top: 0;
     font-family: Gilroy-Light;
@@ -347,20 +344,20 @@ body {
     width: 17.5vw;
     position: absolute;
     z-index: 15;
-    margin-top: 3.5vh;
+    margin-top: 3.2vh;
     background-color: #e74696;
 }
 .tab{
     font-size:3vh;
     margin-top: 0;
     width: 49.5vw;
-    height: 4vh;
+    height: 4.5vh;
     display:inline-block;
     position:relative;
     text-align:center;
     color:black;
     overflow-y:hidden;
-    line-height: 4vh;
+    line-height: 4.5vh;
     font-weight:900;
 
 }
@@ -370,13 +367,13 @@ body {
 }
 
 .tabbar{
-    height: 4vh;
+    height: 4.5vh;
     background-color:white;
 }
 
 .SHDW{
     width:100vw;
-    height:2vh;
+    height:1.5vh;
     background:url(../img/program/shadow.png);
     background-repeat:no-repeat;
     background-position:top;

@@ -92,7 +92,7 @@
                 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
                       <!-- Indicators -->
                       <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="0"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
                         <li data-target="#myCarousel" data-slide-to="3"></li>
@@ -100,27 +100,27 @@
 
                       <!-- Wrapper for slides -->
                       <div class="carousel-inner" role="listbox">
-                        <div class="item active">
+                        <div class="item">
                             <div class = "tab SPK" onclick="location.href='speakers3.html'">SPEAKERS</div>
-                            <div class = "tab ENT" onclick="location.href='program2.html'">ENTERTAINMENT</div>
-                            <div class = "tab WRK" onclick="location.href='program2.html'">WORKSHOPS</div>
+                            <div class = "tab ENT" onclick="location.href='entertainment.html'">ENTERTAINMENT</div>
+                            <div class = "tab WRK" onclick="location.href='workshop.html'">WORKSHOPS</div>
                         </div>
 
                         <div class="item">
-                            <div class = "tab RND" onclick="location.href='program2.html'">ROUNDTABLES</div>
-                            <div class = "tab PANEL" onclick="location.href='program2.html'">PANEL DISCUSSIONS</div>
-                            <div class = "tab BRD" onclick="location.href='program2.html'">BOARDROOM CHALLENGE</div>
+                            <div class = "tab RND" onclick="location.href='roundtable.html'">ROUNDTABLES</div>
+                            <div class = "tab PANEL" onclick="location.href='panel.html'">PANEL DISCUSSIONS</div>
+                            <div class = "tab BRD" onclick="location.href='boardroom.html'">BOARDROOM CHALLENGE</div>
                         </div>
 
-                        <div class="item">
+                        <div class="item active">
                             <div class = "tab MM" onclick="location.href='matchma.html'">MATCHMAKING</div>
-                            <div class = "tab PRE" onclick="location.href='program2.html'">PRE AND SIDE EVENTS</div>
+                            <div class = "tab PRE" onclick="location.href='preandside.html'">PRE AND SIDE EVENTS</div>
                             <div class = "tab KAK active" onclick="location.href='kakola.html'">KAKOLA</div>
                         </div>
 
                         <div class="item">
-                            <div class = "tab DEMO" onclick="openTab(event,'DEMO')">DEMO STAGE</div>
-                            <div class = "tab SNR" onclick="location.href='program2.html'">SENIORS</div>
+                            <div class = "tab DEMO" onclick="location.href='demos.html'">DEMO STAGE</div>
+                            <div class = "tab SNR" onclick="location.href='suomi100.html'">100 SENIORS</div>
                             <div class = "tab PRG" onclick="location.href='program2.html'">PROGRAM</div>
                         </div>
 						<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -177,7 +177,7 @@
             else
                 return 0;
         }
-        $('#myCarousel').carousel(qs('slide'));
+
     });
     // SIDE MENU
 
@@ -241,57 +241,6 @@
             'height': '100vh'
         });
     });
-
-    // USER INFO
-	$('#send').on('tap', function(){
-		localStorage.userName = $('#input').val();
-		introductions();
-	});
-
-	$('#erase').on('tap', function(){
-		localStorage.removeItem('userName');
-	});
-
-	introductions();
-	function introductions (){
-		if(localStorage.userName != undefined){
-			$('#greetings').html('Welcome <strong>' +localStorage.userName +'</strong>!<br><br><a href="">Check out todays awesome <strong>schedule</strong></a>');
-
-		}else{
-			$('#greetings').html('You\'re new! Introduce yourself <strong><a href="">here</a></strong>');
-		};
-	};
-
-    // LINKEDIN OAUTH2
-    function oauth2_login() {
-        $.oauth2({
-            auth_url: 'https://www.linkedin.com/oauth/v2/authorization',           // required
-            response_type: 'code',      // required - "code"/"token"
-            token_url: 'https://www.linkedin.com/uas/oauth2/accessToken',          // required if response_type = 'code'
-            client_id: '78p3krb1oky5vx',          // required
-            client_secret: 'ptIkcf2REN9hSiEZ',      // required if response_type = 'code'
-            redirect_uri: 'http://localhost/',       // required - some dummy url
-            other_params: {scope: 'r_basicprofile', state: 'oujeeoujeeoujeea'}        // optional params object for scope, state, display...
-        }, function(token, response){
-            // do something with token or response
-            var authtoken = 'bearer'+token
-            $('#logs').html(token);
-            $.ajax({
-                url: "https://api.linkedin.com/v1/people/~?(:id)format=json?oauth_token="+token,
-                type: "GET",
-                Host: "api.linkedin.com",
-                Connection: "Keep-Alive",
-                Authorization: authtoken,
-                success: function(data) {
-                    $('#logs2').html(data);
-                }
-            });
-        }, function(error, response){
-            // do something with error object
-            $("#logs").append("<p class='error'><b>error: </b>"+JSON.stringify(error)+"</p>");
-            $("#logs").append("<p class='error'><b>response: </b>"+JSON.stringify(response)+"</p>");
-        });
-    };
 </script>
 </body>
 </html>

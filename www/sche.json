@@ -117,7 +117,7 @@
                 "time": "12.30 - 13.15",
                 "title": "Boardroom Challenge",
                 "description": "",
-                "category": "boardRoomChallege",
+                "category": "boardRoomChallenge",
                 "duration": "three",
                 "nextin": "n-2"
             },
@@ -187,7 +187,7 @@
                 "time": "10.45–11.15",
                 "title": "Workshop",
                 "description": "TBA",
-                "category": "workshop",
+                "category": "wshop",
                 "duration": "two",
                 "nextin": "n-1"
             },
@@ -195,7 +195,7 @@
                 "time": "11.30 - 13.00",
                 "title": "Workshop",
                 "description": "Mentalmodel game, Monkey Business",
-                "category": "workshop",
+                "category": "wshop",
                 "duration": "six",
                 "nextin": "n-2"
             },
@@ -203,7 +203,7 @@
                 "time": "13.30–15.00",
                 "title": "Round table",
                 "description": "TBA",
-                "category": "workshop",
+                "category": "wshop",
                 "duration": "six",
                 "nextin": "n-2"
             },
@@ -211,7 +211,7 @@
                 "time": "15.30–17.00",
                 "title": "Workshop",
                 "description": "Visualization of strategy, Salla Lehtipuu",
-                "category": "workshop",
+                "category": "wshop",
                 "duration": "six",
                 "nextin": "n-0"
             }
@@ -262,7 +262,7 @@
                 "title": "Gerd Leonhard",
                 "description": "Future agency",
                 "category": "keynote",
-                "duration": "three",
+                "duration": "one",
                 "nextin": "n-2"
             },
             {
@@ -270,7 +270,7 @@
                 "title": "Pitch Final",
                 "description": "",
                 "category": "pitchingCompetition",
-                "duration": "three",
+                "duration": "five",
                 "nextin": "n-0"
             },
             {
@@ -321,8 +321,8 @@
                 "time": "10.15 - 11.00",
                 "title": "Boardroom Challenge",
                 "description": "",
-                "category": "boardRoomChallege",
-                "duration": "six",
+                "category": "boardRoomChallenge",
+                "duration": "three",
                 "nextin": "n-2"
             },
             {
@@ -331,13 +331,13 @@
                 "description": "",
                 "category": "panel",
                 "duration": "four",
-                "nextin": "n-2"
+                "nextin": "n-0"
             },
             {
                 "time": "13.00 - 13.45",
-                "title": "Boardroom Chgallenge",
+                "title": "Boardroom Challenge",
                 "description": "",
-                "category": "boardRoomChallege",
+                "category": "boardRoomChallenge",
                 "duration": "four",
                 "nextin": "n-1"
             },
@@ -365,15 +365,15 @@
             {
                 "time": "12.00 - 13.30",
                 "title": "Round table",
-                "description": "TBA, Greg Leonhard",
+                "description": "TBA, Gerd Leonhard",
                 "category": "roundTable",
                 "duration": "six",
                 "nextin": "n-2"
             },
             {
                 "time": "14.00 - 15.30",
-                "title": "TBA, Melody Hossaini",
-                "description": "",
+                "title": "Round Table",
+                "description": "TBA",
                 "category": "roundTable",
                 "duration": "six",
                 "nextin": "n-0"
@@ -387,7 +387,7 @@
                 "time": "10.00 – 11.30",
                 "title": "Workshop",
                 "description": "TBA, Turku University - Finland Futures Academy",
-                "category": "workshop",
+                "category": "wshop",
                 "duration": "six",
                 "nextin": "n-2"
             },
@@ -395,7 +395,7 @@
                 "time": "12.00 - 13.30",
                 "title": "Workshop",
                 "description": "TBA",
-                "category": "workshop",
+                "category": "wshop",
                 "duration": "six",
                 "nextin": "n-2"
             },
@@ -404,7 +404,7 @@
                 "title": "Workshop",
                 "description": "TBA",
                 "description": "TBA",
-                "category": "workshop",
+                "category": "wshop",
                 "duration": "six",
                 "nextin": "n-1"
             },
@@ -412,7 +412,7 @@
                 "time": "15.45 – 16.45",
                 "title": "Workshop",
                 "description": "TBA",
-                "category": "workshop",
+                "category": "wshop",
                 "duration": "four",
                 "nextin": "n-0"
             }
