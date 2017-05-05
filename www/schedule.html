@@ -88,9 +88,10 @@
 
         <div class="container scheBody">
 		<div class="tabbar">
-			<div class ="tab INFO" onclick="onWednesday()">Wednesday</div>
-			<div class ="tab FAQ" onclick="onThursday()">Thursday</div>
+			<div class ="tab INFO" onclick="onWednesday()" style="font-size: 3.5vw;">WEDNESDAY</div>
+			<div class ="tab FAQ" onclick="onThursday()" style="font-size: 3.5vw;">THURSDAY</div>
 		</div>
+		<div class="SHDW"></div>
 		<div class="container-fluid padding">
             <div class="floatStage">
                 <div class="area"><h5>MAIN<br>STAGE</h5></div>
@@ -162,8 +163,6 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mobile-events.min.js"></script>
-<script type="text/javascript" src="js/cordova.oauth2.js"></script>
-<script type='application/javascript' src='js/fastclick.js'></script>
 <script src="js/time.js"></script>
 <script>
     $(".wed").on("tap", function(){
@@ -213,9 +212,7 @@
         $.getJSON('sche.json', function(data) {
             var stage = ["tent", "park", "bryggman", "kingsHall", "werstas"];
             data.wed.stage = stage;
-
             var stagehtml = ["main-stage", "park", "summerstage", "lordscellar", "workshop"];
-
             for (var x=0; x<5; x++){
                 for (var y=0; y<data.wed[stage[x]].length; y++) {
                     document.getElementById(stagehtml[x]).innerHTML += "<div class='box " + data.wed[stage[x]]  [y].duration + ' ' + data.wed[stage[x]][y].nextin + ' ' + data.wed[stage[x]][y].startin  +   "' ' id='" + data.wed[stage[x]][y].category + "'  ><div class='tick " + data.wed[stage[x]][y].category + "' ></div><div class='detail'><p class='etime'>" + data.wed[stage[x]][y].time + "</p><p class='title'>" + data.wed[stage[x]][y].title + "</p><p class='desc'>" + data.wed[stage[x]][y].description + "</p></div></div>"
@@ -227,31 +224,21 @@
         });
     };
 
-
-    onWednesday();
     function onThursday() {
-
         $(".box").remove();
-
         $.getJSON('sche.json', function(data) {
             var stage = ["tent", "park", "bryggman", "kingsHall", "werstas"];
             data.thu.stage = stage;
-
             var stagehtml = ["main-stage", "park", "summerstage", "lordscellar", "workshop"];
-
             for (var x=0; x<5; x++){
                 for (var y=0; y<data.thu[stage[x]].length; y++) {
                     document.getElementById(stagehtml[x]).innerHTML += "<div class='box " + data.thu[stage[x]][y].duration + ' ' + data.thu[stage[x]][y].nextin + ' ' + data.thu[stage[x]][y].startin  +   "' ' id='" + data.thu[stage[x]][y].category + "'  ><div class='tick " + data.wed[stage[x]][y].category + "' ></div><div class='detail'><p class='etime'>" + data.thu[stage[x]][y].time + "</p><p class='title'>" + data.thu[stage[x]][y].title + "</p><p class='desc'>" + data.thu[stage[x]][y].description + "</p></div></div>"
                 }
-
             }
-
-
         });
     };
-
-
-
+	console.log(nowDate);
+	(nowDate.year === 2017 && nowDate.month === 6 && nowDate.day === 1) ? onThursday(): onWednesday();
 </script>
 </body>
 </html>

@@ -78,7 +78,7 @@ body {
 .time {
     height: 3vh;
     font-size: 0;
-    margin-left: 12vw;
+    margin-left: 17.5vw;
 }
 
 
@@ -91,6 +91,8 @@ body {
     margin-bottom: 0;
     margin-top:0;
     text-align: left;
+    border-left: 0.1vh solid #838383;
+    padding-left: 0.5vh;
 }
 
 .info {
@@ -273,23 +275,23 @@ body {
 }
 
 .s-0 {
-    margin-left: 17vw;
+    margin-left: 0;
 }
 
 .s-1 {
-    margin-left: 47vw;
+    margin-left: 30vw;
 }
 
 .s-2 {
-    margin-left: 77vw;
+    margin-left: 60vw;
 }
 
 .s-3 {
-    margin-left: 107vw;
+    margin-left: 90vw;
 }
 
 .s-4 {
-    margin-left: 137vw;
+    margin-left: 120vw;
     }
 
 .performance {
@@ -328,7 +330,7 @@ body {
 
 .verticalLine {
     width: 1.5vw;
-    border-right: 0.5vw dashed #000000;
+    border-left: 0.5vw dashed #000000;
     position:absolute;
     top:3.3vh;
     display: none;
@@ -342,7 +344,7 @@ body {
 }
 
 .floatStage {
-    width: 18vw;
+    width: 17.5vw;
     position: absolute;
     z-index: 15;
     margin-top: 3.5vh;
@@ -352,13 +354,13 @@ body {
     font-size:3vh;
     margin-top: 0;
     width: 49.5vw;
-    height: 6vh;
+    height: 4vh;
     display:inline-block;
     position:relative;
     text-align:center;
     color:black;
     overflow-y:hidden;
-    line-height: 6vh;
+    line-height: 4vh;
     font-weight:900;
 
 }
@@ -368,7 +370,7 @@ body {
 }
 
 .tabbar{
-    height: 6vh;
+    height: 4vh;
     background-color:white;
 }
 
@@ -379,4 +381,7 @@ body {
     background-repeat:no-repeat;
     background-position:top;
     background-size:100vw 1.5vh;
+}
+.container {
+    text-align: left;
 }
